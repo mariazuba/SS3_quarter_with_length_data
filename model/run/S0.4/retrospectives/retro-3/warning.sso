@@ -1,0 +1,67 @@
+1 reset lower end of F_reporting_ages to be nages-2  
+2 reset upper end of F_reporting_ages to be nages-2  
+3 parameter init value is greater than parameter max 3.278 > 3 for parm: 7 ; search for <now check> echoinput for parm_type, will exit if prior requested
+4 setting in starter does not request all priors, and 9 parameters have priors and are not estimated, so their prior not included in obj_fun.
+5 1st iteration warning: catch logL > 50% total logL; check configuration; suggest start with larger R0
+6  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1063; parm#: 14; y: 1990; min: 0; max: 2; base: 1.70285 timevary_val: 2.01358 RecrDist_GP_1_area_1_month_8
+7  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1063; parm#: 14; y: 1993; min: 0; max: 2; base: 1.70285 timevary_val: 2.93512 RecrDist_GP_1_area_1_month_8
+8  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1063; parm#: 14; y: 1994; min: 0; max: 2; base: 1.70285 timevary_val: 2.17968 RecrDist_GP_1_area_1_month_8
+9  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1063; parm#: 14; y: 1996; min: 0; max: 2; base: 1.70285 timevary_val: 2.29349 RecrDist_GP_1_area_1_month_8
+10  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1063; parm#: 12; y: 1998; min: 0; max: 2; base: 1.98843 timevary_val: 2.04166 RecrDist_GP_1_area_1_month_2
+11  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1063; parm#: 15; y: 2001; min: 0; max: 2; base: 1.25019 timevary_val: 2.09802 RecrDist_GP_1_area_1_month_11
+12  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1063; parm#: 15; y: 2002; min: 0; max: 2; base: 1.25019 timevary_val: 2.05556 RecrDist_GP_1_area_1_month_11
+13  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1063; parm#: 14; y: 2005; min: 0; max: 2; base: 1.70285 timevary_val: 2.6137 RecrDist_GP_1_area_1_month_8
+14  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1063; parm#: 14; y: 2006; min: 0; max: 2; base: 1.70285 timevary_val: 2.52718 RecrDist_GP_1_area_1_month_8
+15  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1063; parm#: 13; y: 2007; min: 0; max: 2; base: 0.734882 timevary_val: 2.39749 RecrDist_GP_1_area_1_month_5
+16  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1063; parm#: 13; y: 2008; min: 0; max: 2; base: 0.734882 timevary_val: 2.03516 RecrDist_GP_1_area_1_month_5
+17  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1063; parm#: 13; y: 2010; min: 0; max: 2; base: 0.734882 timevary_val: 2.07841 RecrDist_GP_1_area_1_month_5
+18  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1063; parm#: 13; y: 2012; min: 0; max: 2; base: 0.734882 timevary_val: 2.28138 RecrDist_GP_1_area_1_month_5
+19  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1063; parm#: 14; y: 2017; min: 0; max: 2; base: 1.70285 timevary_val: 2.01698 RecrDist_GP_1_area_1_month_8
+20  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1063; parm#: 12; y: 2021; min: 0; max: 2; base: 1.98843 timevary_val: 2.8187 RecrDist_GP_1_area_1_month_2
+21  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1063; parm#: 12; y: 2022; min: 0; max: 2; base: 1.98843 timevary_val: 2.8343 RecrDist_GP_1_area_1_month_2
+22  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1063; parm#: 12; y: 2023; min: 0; max: 2; base: 1.98843 timevary_val: 2.81075 RecrDist_GP_1_area_1_month_2
+23  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1063; parm#: 12; y: 2024; min: 0; max: 2; base: 1.98843 timevary_val: 2.84028 RecrDist_GP_1_area_1_month_2
+24 warning: poor convergence in Fmsy, final dy/dy2= -0.148745
+25 Fmsy/mey is >3x of Fspr are you sure?  check for convergence 
+26 Fmsy.mey is close to max allowed; check for convergence 
+27 Forecast F capped by max possible F from control file: 4
+28 Final gradient: 0.00183239 is larger than final_conv: 1e-05
+29  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 14; y: 1990; min: 0; max: 2; base: 1.70285 timevary_val: 2.01358 RecrDist_GP_1_area_1_month_8
+30  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 14; y: 1993; min: 0; max: 2; base: 1.70285 timevary_val: 2.93512 RecrDist_GP_1_area_1_month_8
+31  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 14; y: 1994; min: 0; max: 2; base: 1.70285 timevary_val: 2.17968 RecrDist_GP_1_area_1_month_8
+32  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 14; y: 1996; min: 0; max: 2; base: 1.70285 timevary_val: 2.29349 RecrDist_GP_1_area_1_month_8
+33  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 12; y: 1998; min: 0; max: 2; base: 1.98843 timevary_val: 2.04166 RecrDist_GP_1_area_1_month_2
+34  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 15; y: 2001; min: 0; max: 2; base: 1.25019 timevary_val: 2.09802 RecrDist_GP_1_area_1_month_11
+35  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 15; y: 2002; min: 0; max: 2; base: 1.25019 timevary_val: 2.05556 RecrDist_GP_1_area_1_month_11
+36  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 14; y: 2005; min: 0; max: 2; base: 1.70285 timevary_val: 2.6137 RecrDist_GP_1_area_1_month_8
+37  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 14; y: 2006; min: 0; max: 2; base: 1.70285 timevary_val: 2.52718 RecrDist_GP_1_area_1_month_8
+38  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 13; y: 2007; min: 0; max: 2; base: 0.734882 timevary_val: 2.39749 RecrDist_GP_1_area_1_month_5
+39  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 13; y: 2008; min: 0; max: 2; base: 0.734882 timevary_val: 2.03516 RecrDist_GP_1_area_1_month_5
+40  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 13; y: 2010; min: 0; max: 2; base: 0.734882 timevary_val: 2.07841 RecrDist_GP_1_area_1_month_5
+41  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 13; y: 2012; min: 0; max: 2; base: 0.734882 timevary_val: 2.28138 RecrDist_GP_1_area_1_month_5
+42  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 14; y: 2017; min: 0; max: 2; base: 1.70285 timevary_val: 2.01698 RecrDist_GP_1_area_1_month_8
+43  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 12; y: 2021; min: 0; max: 2; base: 1.98843 timevary_val: 2.8187 RecrDist_GP_1_area_1_month_2
+44  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 12; y: 2022; min: 0; max: 2; base: 1.98843 timevary_val: 2.8343 RecrDist_GP_1_area_1_month_2
+45  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 12; y: 2023; min: 0; max: 2; base: 1.98843 timevary_val: 2.81075 RecrDist_GP_1_area_1_month_2
+46  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 12; y: 2024; min: 0; max: 2; base: 1.98843 timevary_val: 2.84028 RecrDist_GP_1_area_1_month_2
+47 Forecast F capped by max possible F from control file: 4
+48  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 14; y: 1990; min: 0; max: 2; base: 1.70285 timevary_val: 2.01358 RecrDist_GP_1_area_1_month_8
+49  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 14; y: 1993; min: 0; max: 2; base: 1.70285 timevary_val: 2.93512 RecrDist_GP_1_area_1_month_8
+50  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 14; y: 1994; min: 0; max: 2; base: 1.70285 timevary_val: 2.17968 RecrDist_GP_1_area_1_month_8
+51  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 14; y: 1996; min: 0; max: 2; base: 1.70285 timevary_val: 2.29349 RecrDist_GP_1_area_1_month_8
+52  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 12; y: 1998; min: 0; max: 2; base: 1.98843 timevary_val: 2.04166 RecrDist_GP_1_area_1_month_2
+53  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 15; y: 2001; min: 0; max: 2; base: 1.25019 timevary_val: 2.09802 RecrDist_GP_1_area_1_month_11
+54  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 15; y: 2002; min: 0; max: 2; base: 1.25019 timevary_val: 2.05556 RecrDist_GP_1_area_1_month_11
+55  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 14; y: 2005; min: 0; max: 2; base: 1.70285 timevary_val: 2.6137 RecrDist_GP_1_area_1_month_8
+56  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 14; y: 2006; min: 0; max: 2; base: 1.70285 timevary_val: 2.52718 RecrDist_GP_1_area_1_month_8
+57  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 13; y: 2007; min: 0; max: 2; base: 0.734882 timevary_val: 2.39749 RecrDist_GP_1_area_1_month_5
+58  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 13; y: 2008; min: 0; max: 2; base: 0.734882 timevary_val: 2.03516 RecrDist_GP_1_area_1_month_5
+59  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 13; y: 2010; min: 0; max: 2; base: 0.734882 timevary_val: 2.07841 RecrDist_GP_1_area_1_month_5
+60  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 13; y: 2012; min: 0; max: 2; base: 0.734882 timevary_val: 2.28138 RecrDist_GP_1_area_1_month_5
+61  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 14; y: 2017; min: 0; max: 2; base: 1.70285 timevary_val: 2.01698 RecrDist_GP_1_area_1_month_8
+62  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 12; y: 2021; min: 0; max: 2; base: 1.98843 timevary_val: 2.8187 RecrDist_GP_1_area_1_month_2
+63  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 12; y: 2022; min: 0; max: 2; base: 1.98843 timevary_val: 2.8343 RecrDist_GP_1_area_1_month_2
+64  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 12; y: 2023; min: 0; max: 2; base: 1.98843 timevary_val: 2.81075 RecrDist_GP_1_area_1_month_2
+65  adjusted MGparm out of base parm bounds. Phase: 4; Inter: 1853; parm#: 12; y: 2024; min: 0; max: 2; base: 1.98843 timevary_val: 2.84028 RecrDist_GP_1_area_1_month_2
+ N parameters are on or within 1% of min-max bound: 1; check results, variance may be suspect
+N warnings: 65

@@ -1,0 +1,187 @@
+1 Forecast=0 or -1, so rest of forecast file will not be read and can be omitted;
+2 parameter init value is greater than parameter max 3.278 > 3 for parm: 7 ; search for <now check> echoinput for parm_type, will exit if prior requested
+3  adjusted selparm out of base parm bounds. Phase: 1; Inter: 1; fleet: 1; base_parm#: 1; y: 1989; min: -1; max: 10; base: 8 timevary_val: 16  Size_inflection_SEINE(1)
+4  adjusted selparm out of base parm bounds. Phase: 1; Inter: 1; fleet: 1; base_parm#: 1; y: 2001; min: -1; max: 10; base: 8 timevary_val: 18  Size_inflection_SEINE(1)
+5  adjusted selparm out of base parm bounds. Phase: 1; Inter: 1; fleet: 1; base_parm#: 2; y: 2001; min: -1; max: 20; base: 10 timevary_val: 21  Size_95%width_SEINE(1)
+6  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 1989; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+7  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 1990; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+8  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 1991; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+9  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 1992; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+10  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 1368; parm#: 13; y: 1993; min: 0; max: 2; base: 0.923806 timevary_val: -0.0445657 RecrDist_GP_1_area_1_month_4
+11  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 1368; parm#: 14; y: 1993; min: 0; max: 2; base: 1.75345 timevary_val: 2.06395 RecrDist_GP_1_area_1_month_7
+12  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 1993; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+13  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 1994; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+14  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 1995; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+15  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 1996; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+16  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 1997; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+17  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 1998; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+18  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 1999; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+19  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 1368; parm#: 15; y: 2000; min: 0; max: 2; base: 0.760939 timevary_val: -0.109888 RecrDist_GP_1_area_1_month_10
+20  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 2000; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+21  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 2001; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+22  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 2002; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+23  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 1368; parm#: 15; y: 2003; min: 0; max: 2; base: 0.760939 timevary_val: -0.394254 RecrDist_GP_1_area_1_month_10
+24  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 2003; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+25  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 1368; parm#: 15; y: 2004; min: 0; max: 2; base: 0.760939 timevary_val: -0.600086 RecrDist_GP_1_area_1_month_10
+26  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 2004; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+27  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 1368; parm#: 13; y: 2005; min: 0; max: 2; base: 0.923806 timevary_val: 2.36287 RecrDist_GP_1_area_1_month_4
+28  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 1368; parm#: 15; y: 2005; min: 0; max: 2; base: 0.760939 timevary_val: -0.807427 RecrDist_GP_1_area_1_month_10
+29  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 2005; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+30  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 1368; parm#: 13; y: 2006; min: 0; max: 2; base: 0.923806 timevary_val: 2.13902 RecrDist_GP_1_area_1_month_4
+31  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 1368; parm#: 15; y: 2006; min: 0; max: 2; base: 0.760939 timevary_val: -0.831947 RecrDist_GP_1_area_1_month_10
+32  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 2006; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+33  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 1368; parm#: 12; y: 2007; min: 0; max: 2; base: 0.189125 timevary_val: 2.15565 RecrDist_GP_1_area_1_month_1
+34  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 1368; parm#: 15; y: 2007; min: 0; max: 2; base: 0.760939 timevary_val: -0.679852 RecrDist_GP_1_area_1_month_10
+35  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 2007; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+36  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 1368; parm#: 15; y: 2008; min: 0; max: 2; base: 0.760939 timevary_val: -0.636992 RecrDist_GP_1_area_1_month_10
+37  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 2008; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+38  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 1368; parm#: 13; y: 2009; min: 0; max: 2; base: 0.923806 timevary_val: 2.07718 RecrDist_GP_1_area_1_month_4
+39  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 1368; parm#: 15; y: 2009; min: 0; max: 2; base: 0.760939 timevary_val: -0.608008 RecrDist_GP_1_area_1_month_10
+40  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 2009; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+41  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 1368; parm#: 15; y: 2010; min: 0; max: 2; base: 0.760939 timevary_val: -0.452374 RecrDist_GP_1_area_1_month_10
+42  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 2010; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+43  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 1368; parm#: 12; y: 2011; min: 0; max: 2; base: 0.189125 timevary_val: 2.11763 RecrDist_GP_1_area_1_month_1
+44  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 1368; parm#: 15; y: 2011; min: 0; max: 2; base: 0.760939 timevary_val: -0.399316 RecrDist_GP_1_area_1_month_10
+45  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 2011; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+46  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 1368; parm#: 15; y: 2012; min: 0; max: 2; base: 0.760939 timevary_val: -0.0905672 RecrDist_GP_1_area_1_month_10
+47  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 2012; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+48  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 1368; parm#: 15; y: 2013; min: 0; max: 2; base: 0.760939 timevary_val: -0.0620851 RecrDist_GP_1_area_1_month_10
+49  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 2013; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+50  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 2014; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+51  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 2015; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+52  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 2016; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+53  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 1368; parm#: 15; y: 2017; min: 0; max: 2; base: 0.760939 timevary_val: -0.13427 RecrDist_GP_1_area_1_month_10
+54  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 2017; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+55  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 1368; parm#: 14; y: 2018; min: 0; max: 2; base: 1.75345 timevary_val: 2.16987 RecrDist_GP_1_area_1_month_7
+56  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 2018; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+57  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 2019; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+58  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 2020; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+59  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 2021; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+60  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 2022; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+61  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 1368; parm#: 15; y: 2023; min: 0; max: 2; base: 0.760939 timevary_val: 2.32945 RecrDist_GP_1_area_1_month_10
+62  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 2023; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+63  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 1368; parm#: 15; y: 2024; min: 0; max: 2; base: 0.760939 timevary_val: 2.29385 RecrDist_GP_1_area_1_month_10
+64  adjusted selparm out of base parm bounds. Phase: 3; Inter: 1368; fleet: 1; base_parm#: 1; y: 2024; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+65 warning: poor convergence in Fmsy, final dy/dy2= -0.156413
+66 Fmsy/mey is >3x of Fspr are you sure?  check for convergence 
+67 Fmsy.mey is close to max allowed; check for convergence 
+68 Final gradient: 0.00182 is larger than final_conv: 0.0001
+69  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 1989; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+70  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 1990; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+71  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 1991; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+72  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 1992; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+73  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 13; y: 1993; min: 0; max: 2; base: 0.923806 timevary_val: -0.0445657 RecrDist_GP_1_area_1_month_4
+74  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 14; y: 1993; min: 0; max: 2; base: 1.75345 timevary_val: 2.06395 RecrDist_GP_1_area_1_month_7
+75  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 1993; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+76  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 1994; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+77  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 1995; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+78  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 1996; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+79  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 1997; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+80  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 1998; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+81  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 1999; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+82  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2000; min: 0; max: 2; base: 0.760939 timevary_val: -0.109888 RecrDist_GP_1_area_1_month_10
+83  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2000; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+84  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2001; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+85  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2002; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+86  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2003; min: 0; max: 2; base: 0.760939 timevary_val: -0.394254 RecrDist_GP_1_area_1_month_10
+87  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2003; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+88  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2004; min: 0; max: 2; base: 0.760939 timevary_val: -0.600086 RecrDist_GP_1_area_1_month_10
+89  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2004; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+90  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 13; y: 2005; min: 0; max: 2; base: 0.923806 timevary_val: 2.36287 RecrDist_GP_1_area_1_month_4
+91  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2005; min: 0; max: 2; base: 0.760939 timevary_val: -0.807427 RecrDist_GP_1_area_1_month_10
+92  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2005; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+93  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 13; y: 2006; min: 0; max: 2; base: 0.923806 timevary_val: 2.13902 RecrDist_GP_1_area_1_month_4
+94  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2006; min: 0; max: 2; base: 0.760939 timevary_val: -0.831947 RecrDist_GP_1_area_1_month_10
+95  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2006; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+96  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 12; y: 2007; min: 0; max: 2; base: 0.189125 timevary_val: 2.15565 RecrDist_GP_1_area_1_month_1
+97  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2007; min: 0; max: 2; base: 0.760939 timevary_val: -0.679852 RecrDist_GP_1_area_1_month_10
+98  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2007; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+99  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2008; min: 0; max: 2; base: 0.760939 timevary_val: -0.636992 RecrDist_GP_1_area_1_month_10
+100  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2008; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+101  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 13; y: 2009; min: 0; max: 2; base: 0.923806 timevary_val: 2.07718 RecrDist_GP_1_area_1_month_4
+102  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2009; min: 0; max: 2; base: 0.760939 timevary_val: -0.608008 RecrDist_GP_1_area_1_month_10
+103  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2009; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+104  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2010; min: 0; max: 2; base: 0.760939 timevary_val: -0.452374 RecrDist_GP_1_area_1_month_10
+105  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2010; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+106  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 12; y: 2011; min: 0; max: 2; base: 0.189125 timevary_val: 2.11763 RecrDist_GP_1_area_1_month_1
+107  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2011; min: 0; max: 2; base: 0.760939 timevary_val: -0.399316 RecrDist_GP_1_area_1_month_10
+108  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2011; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+109  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2012; min: 0; max: 2; base: 0.760939 timevary_val: -0.0905672 RecrDist_GP_1_area_1_month_10
+110  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2012; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+111  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2013; min: 0; max: 2; base: 0.760939 timevary_val: -0.0620851 RecrDist_GP_1_area_1_month_10
+112  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2013; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+113  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2014; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+114  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2015; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+115  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2016; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+116  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2017; min: 0; max: 2; base: 0.760939 timevary_val: -0.13427 RecrDist_GP_1_area_1_month_10
+117  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2017; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+118  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 14; y: 2018; min: 0; max: 2; base: 1.75345 timevary_val: 2.16987 RecrDist_GP_1_area_1_month_7
+119  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2018; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+120  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2019; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+121  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2020; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+122  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2021; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+123  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2022; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+124  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2023; min: 0; max: 2; base: 0.760939 timevary_val: 2.32945 RecrDist_GP_1_area_1_month_10
+125  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2023; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+126  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2024; min: 0; max: 2; base: 0.760939 timevary_val: 2.29385 RecrDist_GP_1_area_1_month_10
+127  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2024; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+128  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 1989; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+129  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 1990; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+130  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 1991; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+131  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 1992; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+132  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 13; y: 1993; min: 0; max: 2; base: 0.923806 timevary_val: -0.0445657 RecrDist_GP_1_area_1_month_4
+133  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 14; y: 1993; min: 0; max: 2; base: 1.75345 timevary_val: 2.06395 RecrDist_GP_1_area_1_month_7
+134  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 1993; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+135  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 1994; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+136  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 1995; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+137  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 1996; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+138  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 1997; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+139  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 1998; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+140  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 1999; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+141  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2000; min: 0; max: 2; base: 0.760939 timevary_val: -0.109888 RecrDist_GP_1_area_1_month_10
+142  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2000; min: -1; max: 10; base: 4.39233 timevary_val: 11.7993  Size_inflection_SEINE(1)
+143  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2001; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+144  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2002; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+145  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2003; min: 0; max: 2; base: 0.760939 timevary_val: -0.394254 RecrDist_GP_1_area_1_month_10
+146  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2003; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+147  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2004; min: 0; max: 2; base: 0.760939 timevary_val: -0.600086 RecrDist_GP_1_area_1_month_10
+148  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2004; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+149  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 13; y: 2005; min: 0; max: 2; base: 0.923806 timevary_val: 2.36287 RecrDist_GP_1_area_1_month_4
+150  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2005; min: 0; max: 2; base: 0.760939 timevary_val: -0.807427 RecrDist_GP_1_area_1_month_10
+151  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2005; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+152  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 13; y: 2006; min: 0; max: 2; base: 0.923806 timevary_val: 2.13902 RecrDist_GP_1_area_1_month_4
+153  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2006; min: 0; max: 2; base: 0.760939 timevary_val: -0.831947 RecrDist_GP_1_area_1_month_10
+154  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2006; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+155  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 12; y: 2007; min: 0; max: 2; base: 0.189125 timevary_val: 2.15565 RecrDist_GP_1_area_1_month_1
+156  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2007; min: 0; max: 2; base: 0.760939 timevary_val: -0.679852 RecrDist_GP_1_area_1_month_10
+157  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2007; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+158  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2008; min: 0; max: 2; base: 0.760939 timevary_val: -0.636992 RecrDist_GP_1_area_1_month_10
+159  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2008; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+160  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 13; y: 2009; min: 0; max: 2; base: 0.923806 timevary_val: 2.07718 RecrDist_GP_1_area_1_month_4
+161  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2009; min: 0; max: 2; base: 0.760939 timevary_val: -0.608008 RecrDist_GP_1_area_1_month_10
+162  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2009; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+163  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2010; min: 0; max: 2; base: 0.760939 timevary_val: -0.452374 RecrDist_GP_1_area_1_month_10
+164  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2010; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+165  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 12; y: 2011; min: 0; max: 2; base: 0.189125 timevary_val: 2.11763 RecrDist_GP_1_area_1_month_1
+166  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2011; min: 0; max: 2; base: 0.760939 timevary_val: -0.399316 RecrDist_GP_1_area_1_month_10
+167  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2011; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+168  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2012; min: 0; max: 2; base: 0.760939 timevary_val: -0.0905672 RecrDist_GP_1_area_1_month_10
+169  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2012; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+170  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2013; min: 0; max: 2; base: 0.760939 timevary_val: -0.0620851 RecrDist_GP_1_area_1_month_10
+171  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2013; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+172  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2014; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+173  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2015; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+174  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2016; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+175  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2017; min: 0; max: 2; base: 0.760939 timevary_val: -0.13427 RecrDist_GP_1_area_1_month_10
+176  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2017; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+177  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 14; y: 2018; min: 0; max: 2; base: 1.75345 timevary_val: 2.16987 RecrDist_GP_1_area_1_month_7
+178  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2018; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+179  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2019; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+180  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2020; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+181  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2021; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+182  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2022; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+183  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2023; min: 0; max: 2; base: 0.760939 timevary_val: 2.32945 RecrDist_GP_1_area_1_month_10
+184  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2023; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+185  adjusted MGparm out of base parm bounds. Phase: 3; Inter: 2170; parm#: 15; y: 2024; min: 0; max: 2; base: 0.760939 timevary_val: 2.29385 RecrDist_GP_1_area_1_month_10
+186  adjusted selparm out of base parm bounds. Phase: 3; Inter: 2170; fleet: 1; base_parm#: 1; y: 2024; min: -1; max: 10; base: 4.39233 timevary_val: 10.7614  Size_inflection_SEINE(1)
+N warnings: 186
