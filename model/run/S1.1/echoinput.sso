@@ -82,13 +82,13 @@ Parse into: depletion_log(ratio): 0 depletion_multi-yr: 0 depletion_basis: 3
 3  F_reporting quantity, e.g. 3=sum(apical Fs)
 3  F_std basis as read
 Parse into: F_std_log(ratio): 0 F_std_multi: 0 F_std_basis: 3
-For Kobe plot, set depletion_basis=2; depletion_level=1.0; F_reporting=your choose; F_std_basis=2
+For Kobe plot, set depletion_basis=2; depletion_level=1.0; F_reporting=your choice; F_std_basis=2
 Read files in 3.30 format
 SS will continue reading from starter.ss until it reads 3.30
 read MCMC_output_detail.MCMC_bump as a single real number;  separate values will be parsed from integer and fraction
 MCMC output detail(1=more_detail_to_posts; 2=write_report_for_each_mceval):  0
 MCMC bump to R0:  0
-Now get ALK tolerance (0.0 is OK for no compression; 0.1 is too big;  suggest 0.0001)
+Now read ALK tolerance which is deprecated. If not 0, it will be reset to 0.
 ALK tolerance:  0
 Now get random number seed; enter -1 to use long(time) as the seed
 random number seed:  -1
@@ -111,6 +111,18 @@ SPAWN month: 1; seas: 1; subseas_for_ALK: 1; timing_in_season: 0
 Accumulator age 3
 1 N_areas 
 4 total number of fishing fleets and surveys 
+MGtype labels: natmort
+growth
+wtlen
+recr_dist
+migration
+ageerror
+catchmult
+hermaphro
+null9
+selectivity
+rel_F
+recruitment
 rows are fleets; columns are: Fleet_#, fleet_type, timing, area, units, need_catch_mult
 1 #  1 -1 1 1 0 # SEINE
 2 #  3 1 1 1 0 # ECOCADIZ
@@ -277,7 +289,7 @@ year, seas: 2024 4 catches:  600 0 0 0
 
 #_  now read survey characteristics:  fleet_#, svyunits, svyerrtype for each fleet 
 Units:  0=numbers; 1=biomass; 2=F; >=30 for special patterns
-Errtype:  -1=normal; 0=lognormal; >0=T
+Errtype:  -2=gamma(future); -1=normal; 0=lognormal ; 1=lognormal w/ biascorr; >1=T-dist with DF=XXX
 SD_Report: 0=no sdreport; 1=enable sdreport
 Fleet Units Err_Type SD_Report
  1 1 0 0
@@ -339,26 +351,37 @@ Index Survey_name       N   Super_Per    Min_val   max_val  //  Observations:
 Number of sdreport index values: 0
  note order of discard read is now: N fleets with disc, then if Ndisc_fleets>0 read:  fleet, disc_units, disc_error(for 1,Ndisc_fleets), then read obs 
 0 N fleets with discard 
-Successful read of discard data  
+Successful read of discard data 
 Index Survey_name       N   Super_Per    Min_val   max_val  //  Observations:
 0 Use mean body size (weight or length); If 0, then no additional input in 3.30 
 Successful pre-processing of mean-bodysize data
 2 LenBin_option:  1=set to data bins; 2 generate uniform; 3 = read custom
  0.5 2.5 22 input for setup of pop length bins 
 1 indicator for length data  
-#_now read for each fleet info for processing the length comps:
+#_now read controls for processing the length comps:
+Use_length_data == 1: invokes original input format starting with mintailcomp, one row for each fleet
+Use_length_data == 2: invokes list format with fleet and partition preceding controls
 #_mintailcomp: upper and lower distribution for females and males separately are accumulated until exceeding this level.
 #_addtocomp:  after accumulation of tails; this value added to all bins
 #_males and females treated as combined gender below this bin number 
 #_compressbins: accumulate upper tail by this number of bins; acts simultaneous with mintailcomp; set=0 for no forced accumulation
-#_Comp_Error:  0=multinomial, 1=Dirichlet
-#_Comp_ERR-2:  index of Dirichlet parameter to use
-#_minsamplesize: minimum sample size; set to 1 to match 3.24, set to 0 for no minimum
--1 0.0001 0 0 0 0 1  #_fleet: 1 SEINE
--1 0.0001 0 0 0 0 1  #_fleet: 2 ECOCADIZ
--1 0.0001 0 0 0 0 1  #_fleet: 3 PELAGO
--1 0.0001 0 0 0 0 1  #_fleet: 4 ECORECLUTAS
-number of D-M parameters needed for length comp data: 0
+#_Comp_Error:  0=multinomial, 1=dirichlet using theta * n, 2=dirichlet using beta, 3=MV_Tweedie with phi and power
+#_Comp_ERR-2:  consecutive index of error def to use
+#_minsamplesize: minimum sample size; set to 1 to match 3.24, minimum value is 0.001
+fleet partition mintailcomp addtocomp combM+F CompressBins CompError ParmSelect minsamplesize
+1 0 -1 0.0001 0 0 0 0 1  #_fleet: 1 SEINE
+1 1 -1 0.0001 0 0 0 0 1  #_fleet: 1 SEINE
+1 2 -1 0.0001 0 0 0 0 1  #_fleet: 1 SEINE
+2 0 -1 0.0001 0 0 0 0 1  #_fleet: 2 ECOCADIZ
+2 1 -1 0.0001 0 0 0 0 1  #_fleet: 2 ECOCADIZ
+2 2 -1 0.0001 0 0 0 0 1  #_fleet: 2 ECOCADIZ
+3 0 -1 0.0001 0 0 0 0 1  #_fleet: 3 PELAGO
+3 1 -1 0.0001 0 0 0 0 1  #_fleet: 3 PELAGO
+3 2 -1 0.0001 0 0 0 0 1  #_fleet: 3 PELAGO
+4 0 -1 0.0001 0 0 0 0 1  #_fleet: 4 ECORECLUTAS
+4 1 -1 0.0001 0 0 0 0 1  #_fleet: 4 ECORECLUTAS
+4 2 -1 0.0001 0 0 0 0 1  #_fleet: 4 ECORECLUTAS
+number of D-M definitions needed for length comp data: 0
 
 40 nlen_bin_for_data 
  len_bins_dat 
@@ -452,6 +475,8 @@ N bins set to zero, so no more reading of age data inputs
 0 (0/1) use mean size-at-age data 
 0 N_envvar 
 0 N sizefreq methods to read 
+here
+bins 
  finished processing sizefreq data 
 0 Do_TagData(0/1/2) 
 #  where 2 indicates additional read of TG_min_recap
@@ -687,8 +712,22 @@ g a seas subseas ALK_idx real_age calen_age lin_grow first_grow_age
 13  0 2 0.7 0 0 0 -3 0 0 0 0 0 0 0 RecrDist_GP_1_area_1_month_10
 14  0.1 10 1 1 1 0 -1 0 0 0 0 0 0 0 CohortGrowDev
 15  1e-07 1 0.5 0 0 0 -3 0 0 0 0 0 0 0 FracFemale_GP_1
-mgparm_type for each parm: 1=M; 2=growth; 3=wtlen,mat,fec,hermo; 4=recr&femfrac; 5=migr; 6=ageerror; 7=catchmult
- 2 2 2 2 2 3 3 3 3 3 3 4 4 2 4
+mgparm_type for each parm:
+1 growth
+2 growth
+3 growth
+4 growth
+5 growth
+6 wtlen
+7 wtlen
+8 wtlen
+9 wtlen
+10 wtlen
+11 wtlen
+12 recr_dist
+13 recr_dist
+14 growth
+15 recr_dist
 Now read env, block/trend, and dev adjustments to MGparms 
 Display timevary_MG flag
 1988 timevary_MG:  0 0 0 0 0 0 0 0
@@ -816,7 +855,7 @@ Q_parm_RD:
 6 0
 7 10
 8 0
-#Now count parameters for D-M variance of composition data; CANNOT be time-varying
+#Now create parameters for D-M variance of composition data; CANNOT be time-varying
  selex and composition base parameters 
 1 ##  -1 10 8 0 0 0 3 0 0 0 0 0 1 1 ## Size_inflection_SEINE(1)
 2 ##  -1 20 10 0 0 0 3 0 0 0 0 0 1 1 ## Size_95%width_SEINE(1)
@@ -829,7 +868,10 @@ Q_parm_RD:
 9 ##  -2 5.5 0 0 0 0 3 0 0 0 0 0 0 0 ## Age_inflection_SEINE(1)
 10 ##  -1 5.5 1 0 0 0 3 0 0 0 0 0 0 0 ## Age_95%width_SEINE(1)
 identify the fleet associated with each parameter
+selparm_fleet:
+ 1 1 2 2 3 3 4 4 5 5
 check on conversion of retention parameter
+check on mirror bounds
 1 sel  -1 10 8 0 0 0 3 0 0 0 0 0 1 1
 
  timevary for sel parameter: 1
@@ -863,7 +905,7 @@ timevary_setup 5 2 3 1 1 0 0 0 0 0 0 0 61 0
 9 sel  -2 5.5 0 0 0 0 3 0 0 0 0 0 0 0
 10 sel  -1 5.5 1 0 0 0 3 0 0 0 0 0 0 0
  now read 0/1 for 2D_AR
-0  #_ 0/1 to request experimental 2D_AR selectivity smoother options  
+0  #_ 0/1 to request experimental 2D_AR selectivity smoother options 
 N_selparm: 10 with timevary: 14 with TV and 2D_AR: 14 timevary parm range for sel: 1 4 4
 list all parms used for timevary implementation
 1 parm  -1 15 8 0 0 0 3
@@ -886,9 +928,15 @@ Recalc_flag_for_age_selex_recalc_by_year
  number of variance adjustment records = 0
 1 max_lambda_phase 
 1 sd_offset (adds log(s)); needed if variance parameters are estimated 
- read lambda changes list until -9999
- number of lambda change records = 0
-0 N lambda changes 
+
+LAMBDA
+ each line has 5 values: like_code, fleet, beginning_phase, value, code_for_sizefreq 
+ terminate reading with like_code = -9999
+ like_code options are:  1=surv; 2=disc; 3=mnwt; 4=length; 5=age; 6=SizeFreq; 7=sizeage; 8=catch; 9=init_equ_catch; 
+ 10=recrdev; 11=parm_prior; 12=parm_dev; 13=CrashPen; 14=Morphcomp; 15=Tag-comp; 16=Tag-negbin; 17=F_ballpark; 18=initEQregime.
+ 2nd value (fleet) only used for like_codes 1 - 9, which are fleet-specific, except
+   2nd value is used for Tag-Group, instead of fleet, for like_codes 15 & 16.
+ 5th value is used only for like_code=6 and specifies the SizeFreq method used, which is in addition to fleet designation.
 0 # extra stdev reporting: 0 = skip, 1 = read specs for reporting stdev for selectivity, size, and numbers, 2 = add option for M, dyn. Bzero & Smrybio 
 End of control file successful! 999
 N parameters: 73
@@ -913,7 +961,7 @@ parm 273 covar 254  after forecast
  do Svy_sdreport labels 0
 parm 276 covar 257  after all derived quantities 
 Active parameters plus derived quantities:  257
-now in PARAMETER_SECTION 
+Begin setting up parameters
  now dimension the selectivity arrays 14
  -1 -1 -1 -1 -3 -3 -3 -3 -2 -1 -1 -1 -1 -1
  10 20 15 20 15 20 15 20 5.5 5.5 15 15 20 20
@@ -937,7 +985,7 @@ end of parameter section
  selex_parms read from ctl  8 10 10 12 10 12 6 10 0 1 8 10 10 11
 
  now check MGparm bounds and priors and do jitter if requested 
- parameter init value is greater than parameter max 3.278 > 3 for parm: 7
+Warning 3 : parameter init value is greater than parameter max 3.278 > 3 for parm: 7
  MG_parms after check  6 19.96 0.46 0.1 0.1 3.13e-06 3.278 12 -0.45 1 0 0.3 0.7 1 0.5
 
  now check SR_parm bounds and priors and do jitter if requested 
@@ -951,7 +999,7 @@ end of parameter section
 
  now check sel_parm bounds and priors and do jitter if requested 
  selex_parms after check   8 10 10 12 10 12 6 10 0 1 8 10 10 11
- ready to evaluate once in prelim
+Begin evaluating biology calculations once
 
 **********************
 number of parameters with timevary:  2
@@ -970,8 +1018,8 @@ base selparm 10
 block pattern 1
 result by year:  10 20 20 20 20 20 20 20 20 20 20 20 20 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21
 get wtlen parms sex: 1 Gpat: 1 sex*Gpat: 1  3.13e-06 3.278 12 -0.45 1 0 0 0
- did MG setup
- did growth1
+Finished MGsetup
+Finished growth1
 GROWTH,  yr= 1989
 sex: 1 GP: 1 Lmin: 6 Linf: 19.96 VBK_temp: -0.46 VBK@age:  0.46
   settlement: 1 g: 1
@@ -1084,6 +1132,10 @@ GP Seas Area Use? female_recr_dist
 1 1 1 1 0.401312
 1 2 1 1 0.598688
  made the age_age' key 
+Finished evaluating biology calculations once
+
+
+Begin estimating
 
 **********************
 number of parameters with timevary:  2
@@ -1101,6 +1153,8 @@ base selparm 10
 4 timevary_parm: 11
 block pattern 1
 result by year:  10 20 20 20 20 20 20 20 20 20 20 20 20 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21
+ MGsetup OK 
+ growth1 OK
 GROWTH,  yr= 1989
 sex: 1 GP: 1 Lmin: 6 Linf: 19.96 VBK_temp: -0.46 VBK@age:  0.46
   settlement: 1 g: 1
@@ -1135,6 +1189,26 @@ mat_len:  0.0153299 0.019124 0.0238345 0.02967 0.0368803 0.0457602 0.0566524 0.0
  mat_age:  1 1 1 1
  mat_len_age:  0.0649726 0.122036 0.510995 0.887442
  fecundity_age:  0 0.000324793 0.00636435 0.0323326
+Natmort seas:1 sex:1 Gpat:1 sex*Gpat:1 settlement:1 gpi:1
+ M:  2.21 1.3 1.3 1.3
+Natmort seas:2 sex:1 Gpat:1 sex*Gpat:1 settlement:1 gpi:1
+ M:  2.21 1.3 1.3 1.3
+Natmort seas:3 sex:1 Gpat:1 sex*Gpat:1 settlement:1 gpi:1
+ M:  2.21 1.3 1.3 1.3
+Natmort seas:4 sex:1 Gpat:1 sex*Gpat:1 settlement:1 gpi:1
+ M:  2.21 1.3 1.3 1.3
+Natmort seas:1 sex:1 Gpat:1 sex*Gpat:1 settlement:2 gpi:2
+ M:  2.21 1.3 1.3 1.3
+Natmort seas:2 sex:1 Gpat:1 sex*Gpat:1 settlement:2 gpi:2
+ M:  2.21 1.3 1.3 1.3
+Natmort seas:3 sex:1 Gpat:1 sex*Gpat:1 settlement:2 gpi:2
+ M:  2.21 1.3 1.3 1.3
+Natmort seas:4 sex:1 Gpat:1 sex*Gpat:1 settlement:2 gpi:2
+ M:  2.21 1.3 1.3 1.3
+natmort OK
+migr OK
+selectivity OK
+Calculate ALK
 fecundity option: 1 parms:  1 0
 maturity option: 1 parms:  12 -0.45
 gp: 1 g 1
@@ -1153,6 +1227,9 @@ mat_len:  0.0153299 0.019124 0.0238345 0.02967 0.0368803 0.0457602 0.0566524 0.0
  mat_age:  1 1 1 1
  mat_len_age:  0.0649726 0.122036 0.510995 0.887442
  fecundity_age:  0 0.000324793 0.00636435 0.0323326
+Begin calculating virgin age struc 
+Begin calculating initial age structure
+Finished initial_conditions
 fecundity option: 1 parms:  1 0
 maturity option: 1 parms:  12 -0.45
 gp: 1 g 1
@@ -2360,3 +2437,30 @@ yr 2024, seas: 1, fleet:3
  sampled  size  0.00080062 0.0376698 1.25113 28.8613 462.554 5153.08 39935.3 215543 811846 2.14219e+06 3.99191e+06 5.34513e+06 5.3359e+06 4.25775e+06 2.99669e+06 2.03519e+06 1.46017e+06 1.28459e+06 1.43326e+06 1.70184e+06 1.86746e+06 1.81069e+06 1.55151e+06 1.20326e+06 891508 691764 613413 619632 657550 681364 664077 599817 499535 383002 270266 175537 104958 57788.5 29305.4 23117.4
  sampled  age   0 2.83989e+07 1.2238e+07 5.81629e+06
  finished time series 
+Finished time_series
+Finished survey obj_fun  0 800.034 1296.82 798.944
+Finished lencomp obj_fun  11889.3 1277.69 1868.5 1406.74
+ initequ_catch -log(L)  0 0 0 0
+ catch -log(L)  1.41291e-14 0 0 0
+Finished recruitdev obj_fun 0 0 0.72
+ OK with obj_func 19338
+Wrote first version of output files (before hessian, benchmark, and forecast)
+Start benchmark and forecast, if requested
+Calculated Fspr 4.30342 0.5
+Calculated Btgt: 6.47511 0.4
+Calculated Fmsy 19.422 5930.79
+Finished benchmark, forecast, and sdreporting
+Iterations: 714
+Writing wtatage.ss_new
+Finished StdDev quantities
+Finished posteriors
+Finished SS_summary.sso
+Finished final writing of report.sso
+Begin writing data_echo.ss_new file
+Begin writing data_expval.ss file
+Begin writing bootstrap data file(s)
+Write starter.ss_new file 
+Write forecast.ss_new file 
+Note 1 Information: A revised protocol for the Fcast_yr specification is available and recommended.
+Write control.ss_new file 
+Begin final output calculations and warnings
