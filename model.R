@@ -76,7 +76,7 @@ r4ss::run(dir=wd, exe="ss3", skipfinished=FALSE, show_in_console =T)
 setwd(old_wd)
 
 #'*------------------------------------------------------------------------------------------*
-### S0.3
+### S0.3 ----
 # S0.2 + two recruitment pulses in July and October 
 # (model estimated fixed proportion for 1989-2023, phase=2)
 #'*------------------------------------------------------------------------------------------*
@@ -91,7 +91,7 @@ system(paste0("chmod 755 ",wd,"/ss3"))
 r4ss::run(dir=wd, exe="ss3", skipfinished=FALSE, show_in_console =T)
 setwd(old_wd)
 #'*------------------------------------------------------------------------------------------*
-### S0.4
+### S0.4 ----
 # S0.3 + two recruitment pulses in July and October 
 # (model estimated variable proportion within 1989-2023 using "random walk")
 #'*------------------------------------------------------------------------------------------*
@@ -106,7 +106,7 @@ system(paste0("chmod 755 ",wd,"/ss3"))
 r4ss::run(dir=wd, exe="ss3", skipfinished=FALSE, show_in_console =T)
 setwd(old_wd)
 #'*------------------------------------------------------------------------------------------*
-### S0.5
+### S0.5 ----
 # S0.4 + four recruitment pulses in january, may, july and october
 # (model estimated variable proportion within 1989-2023 using "random walk")
 #'*------------------------------------------------------------------------------------------*
@@ -123,7 +123,7 @@ setwd(old_wd)
 
 ## Age selectivity scenarios ----
 #'*------------------------------------------------------------------------------------------*
-### S1.0
+### S1.0 ----
 # S0.2 + age-based selectivity 1.0 for all ages starting at age 1 (PELAGO)
 #'*------------------------------------------------------------------------------------------*
 s1.0_path   <- file.path(path.data, "S1.0")
@@ -137,7 +137,7 @@ system(paste0("chmod 755 ",wd,"/ss3"))
 r4ss::run(dir=wd, exe="ss3", skipfinished=FALSE, show_in_console =T)
 setwd(old_wd)
 #'*------------------------------------------------------------------------------------------*
-### S1.1
+### S1.1 ----
 # S1.0 + logistic age-based selectivity (SEINE)
 #'*------------------------------------------------------------------------------------------*
 s1.1_path   <- file.path(path.data, "S1.1")

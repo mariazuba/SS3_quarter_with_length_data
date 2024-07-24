@@ -237,3 +237,38 @@ s4.1_ctl    <- s4.1_inputs$ctl
 #'*specification*
 
 
+#'*------------------------------------------------------------------------------------------*
+### S5.0 ----
+# S0 + stock assessment until 2023
+#'*------------------------------------------------------------------------------------------*
+s5.0_path   <- file.path(path.data, "S5.0")
+s5.0_inputs <- r4ss::SS_read(dir = s5.0_path)
+s5.0_dat    <- s5.0_inputs$dat
+s5.0_ctl    <- s5.0_inputs$ctl
+
+#'*------------------------------------------------------------------------------------------*
+### S5.1 ----
+# S5.0 + include BOCADEVA
+#'*------------------------------------------------------------------------------------------*
+s5.1_path   <- file.path(path.data, "S5.1")
+s5.1_inputs <- r4ss::SS_read(dir = s5.1_path)
+s5.1_dat    <- s5.1_inputs$dat
+s5.1_ctl    <- s5.1_inputs$ctl
+
+#'*------------------------------------------------------------------------------------------*
+### S5.2 ----
+# S5.1 + age maturity
+#'*------------------------------------------------------------------------------------------*
+s5.2_path   <- file.path(path.data, "S5.2")
+s5.2_inputs <- r4ss::SS_read(dir = s5.2_path)
+s5.2_dat    <- s5.2_inputs$dat
+s5.2_ctl    <- s5.2_inputs$ctl
+
+
+
+
+save(s0_inputs,s0.1_inputs,s0.2_inputs,s0.3_inputs,s0.3_inputs,s0.4_inputs,s0.5_inputs, 
+     s1.0_inputs,s1.1_inputs,s2.0_inputs,s2.1_inputs,s2.2_inputs,s3.0_inputs,s4.0_inputs,
+     s4.1_inputs,s5.0_inputs,s5.1_inputs, s5.2_inputs,           
+     file="./data/inputs.RData")
+

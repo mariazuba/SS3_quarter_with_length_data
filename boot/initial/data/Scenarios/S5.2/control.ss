@@ -22,9 +22,9 @@
 #_Cond 1 1 1 2 4 10 # example move definition for seas=1, morph=1, source=1 dest=2, age1=4, age2=10
 #
 1 #_Nblock_Patterns
-3 #_blocks_per_pattern
+2 #_blocks_per_pattern
 #_begin and end years of blocks
-1989 2000 2001 2009 2010 2023
+1989 2000 2001  2023
 #
 # controls for all timevary parameters 
 1 #_env/block/dev_adjust_method for all time-vary parms (1=warn relative to base parm bounds; 3=no bound check)
@@ -47,9 +47,9 @@
 #
 0 #_SD_add_to_LAA (set to 0.1 for SS2 V1.x compatibility)
 0 #_CV_Growth_Pattern:  0 CV=f(LAA); 1 CV=F(A); 2 SD=F(LAA); 3 SD=F(A); 4 logSD=F(A)
-2 #_maturity_option:  1=length logistic; 2=age logistic; 3=read age-maturity matrix by growth_pattern; 4=read age-fecundity; 5=disabled; 6=read length-maturity
+3 #_maturity_option:  1=length logistic; 2=age logistic; 3=read age-maturity matrix by growth_pattern; 4=read age-fecundity; 5=disabled; 6=read length-maturity
 #_Age_0 Age_1 Age_2 Age_3
-0  1 1 1 #_mat
+0 1 1 1 #_mat
 1 #_First_Mature_Age
 1 #_fecundity option:(1)eggs=Wt*(a+b*Wt);(2)eggs=a*L^b;(3)eggs=a*Wt^b; (4)eggs=a+b*L; (5)eggs=a+b*W
 0 #_hermaphroditism option:  0=none; 1=female-to-male age-specific fxn; -1=male-to-female age-specific fxn
@@ -158,7 +158,6 @@
 #_LO  HI  INIT  PRIOR PR_SD PR_type PHASE
  -1   15  8     0     0     0       2   #_SizeSel_P_1_SEINE_1 
  -1   15  10    0     0     0       2   #_SizeSel_P_1_SEINE_2 
- -1   15  11    0     0     0       2   #_SizeSel_P_1_SEINE_3 
  #-1   20  10    0     0     0       3   #_SizeSel_P_2_SEINE_1   
  #-1   20  11    0     0     0       3   #_SizeSel_P_2_SEINE_2  
  #-1   20  12    0     0     0       3   #_SizeSel_P_2_SEINE_3  
