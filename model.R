@@ -22,7 +22,7 @@ library(ss3diags)
 # directorios ----
 path.data<-"boot/data/Scenarios" 
 list.files(path.data)
-
+#r4ss::get_ss3_exe(dir = "boot/initial/software", version = "v3.30.22.1")
 # Scenarios ----
 #'*------------------------------------------------------------------------------------------*
 ### S0 ----
@@ -243,6 +243,51 @@ s4.1_path   <- file.path(path.data, "S4.1")
 cp(s4.1_path, "model/run")
 cp("boot/software/ss3", "model/run/S4.1")
 wd <- paste0(getwd(),"/model/run/S4.1")
+
+#setwd(wd)
+system(wd)
+system(paste0("chmod 755 ",wd,"/ss3"))
+r4ss::run(dir=wd, exe="ss3", skipfinished=FALSE, show_in_console =T)
+setwd(old_wd)
+
+#'*------------------------------------------------------------------------------------------*
+### S5.0 ----
+# S0 + stock assessment until 2023
+#'*------------------------------------------------------------------------------------------*
+s5.0_path   <- file.path(path.data, "S5.0")
+cp(s5.0_path, "model/run")
+cp("boot/software/ss3", "model/run/S5.0")
+wd <- paste0(getwd(),"/model/run/S5.0")
+
+#setwd(wd)
+system(wd)
+system(paste0("chmod 755 ",wd,"/ss3"))
+r4ss::run(dir=wd, exe="ss3", skipfinished=FALSE, show_in_console =T)
+setwd(old_wd)
+
+#'*------------------------------------------------------------------------------------------*
+### S5.1 ----
+# S5.0 + include BOCADEVA
+#'*------------------------------------------------------------------------------------------*
+s5.1_path   <- file.path(path.data, "S5.1")
+cp(s5.1_path, "model/run")
+cp("boot/software/ss3", "model/run/S5.1")
+wd <- paste0(getwd(),"/model/run/S5.1")
+
+#setwd(wd)
+system(wd)
+system(paste0("chmod 755 ",wd,"/ss3"))
+r4ss::run(dir=wd, exe="ss3", skipfinished=FALSE, show_in_console =T)
+setwd(old_wd)
+
+#'*------------------------------------------------------------------------------------------*
+### S5.2 ----
+# S5.1 + age maturity
+#'*------------------------------------------------------------------------------------------*
+s5.2_path   <- file.path(path.data, "S5.2")
+cp(s5.2_path, "model/run")
+cp("boot/software/ss3", "model/run/S5.2")
+wd <- paste0(getwd(),"/model/run/S5.2")
 
 #setwd(wd)
 system(wd)
