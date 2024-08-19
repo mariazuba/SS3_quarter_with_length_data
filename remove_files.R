@@ -1,11 +1,10 @@
 # función que elimina archivos
-dir.origin<-getwd()
-dir<-"boot/initial/data/Scenarios"
-# Lista de carpetas
-carpetas_principales  <- c("S0.5","S1.0","S1.1","S2.0","S2.1","S2.2","S3.0","S4.0","S4.1")
 
+
+deleteFiles<-function(dir,carpetas_principales){
+dir.origin<-getwd()
 # Lista de archivos a eliminar
-archivos_a_mantener <- c("control.ss", "data.ss", "forecast.ss","starter.ss")
+archivos_a_mantener <- c("control.ss", "data.ss", "forecast.ss","starter.ss","wtatage.ss")
 # Iterar sobre cada carpeta principal
 for (i in 1:length(carpetas_principales)) {
   # Construir la ruta completa de la carpeta
@@ -32,5 +31,17 @@ for (i in 1:length(carpetas_principales)) {
   }
   setwd(dir.origin)
 }
+}
 
 
+
+dir<-"model/run/"
+#dir<-"model/retro/S0"
+# Lista de carpetas
+carpetas_principales  <- c("S0","S0.1","S0.2","S0.3","S0.4","S0.5","S1.0",
+                           "S1.1","S2.0","S2.1","S2.2","S3.0","S4.0","S4.1","S5.0",
+                           "S5.1","S5.2")
+#carpetas_principales  <- "S0"
+#carpetas_principales  <- c("retro0","retro-1","retro-2","retro-3","retro-4","retro-5")
+
+deleteFiles(dir,carpetas_principales)

@@ -17,12 +17,12 @@ library(readxl)
 library(openxlsx)
 library(dplyr)
 library(kableExtra)
+library(devtools)
 library(ss3diags)
 
 # directorios ----
 path.data<-"boot/data/Scenarios" 
 list.files(path.data)
-#r4ss::get_ss3_exe(dir = "boot/initial/software", version = "v3.30.22.1")
 # Scenarios ----
 #'*------------------------------------------------------------------------------------------*
 ### S0 ----
@@ -282,7 +282,7 @@ setwd(old_wd)
 
 #'*------------------------------------------------------------------------------------------*
 ### S5.2 ----
-# S5.1 + age maturity
+# S5.1 + age maturity (este no funcionó, revisar!!!)
 #'*------------------------------------------------------------------------------------------*
 s5.2_path   <- file.path(path.data, "S5.2")
 cp(s5.2_path, "model/run")
