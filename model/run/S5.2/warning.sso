@@ -1,3 +1,0 @@
-Warning 1 : Forecast=0 or -1, so rest of forecast file will not be read and can be omitted;
-Warning 2 : At least one block pattern ends in endyr. Check the output parameter value time series to see if the values in forecast years are as intended.
-Warning 3 Fatal Error! CV of growth parameters cannot be time-varying
