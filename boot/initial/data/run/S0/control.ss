@@ -11,10 +11,7 @@
 0 # unused option
 # for each settlement assignment:
 #_GPattern	month	area	age
-1	 1	1	0	#_1
-#1	 5	1	0	#_2
-#1	 8	1	0	#_3
-#1	11	1	0	#_4
+1	 7	1	0	#_1
 #
 #_Cond 0 # N_movement_definitions goes here if N_areas > 1
 #_Cond 1.0 # first age that moves (real age at begin of season, not integer) also cond on do_migration>0
@@ -23,7 +20,7 @@
 1 #_Nblock_Patterns
 2 #_blocks_per_pattern
 #_begin and end years of blocks
-1989 2000 2001 2024
+1989 2000 2001 2023
 #
 # controls for all timevary parameters 
 1 #_env/block/dev_adjust_method for all time-vary parms (1=warn relative to base parm bounds; 3=no bound check)
@@ -37,7 +34,7 @@
 3 #_natM_type:_0=1Parm; 1=N_breakpoints;_2=Lorenzen;_3=agespecific;_4=agespec_withseasinterpolate;_5=Maunder_M;_6=Age-range_Lorenzen
 #_ #_Age_natmort_by sex x growthpattern
 #_Age_0	Age_1	Age_2	Age_3
-2.21	1.3	1.3	1.3	#_natM1
+2.97	1.13	1.13	1.13	#_natM1
 1 # GrowthModel: 1=vonBert with L1&L2; 2=Richards with L1&L2; 3=age_specific_K_incr; 4=age_specific_K_decr;5=age_specific_K_each; 6=NA; 7=NA; 8=growth cessation
 0 #_Age(post-settlement)_for_L1;linear growth below this
 999 #_Growth_Age_for_L2 (999 to use as Linf)
@@ -61,11 +58,10 @@
  0.05	0.25	     0.1	0	0	0	-3	0	0	   0	   0	0	0	0	#_CV_old          
    -3	   3	3.13e-06	0	0	0	-3	0	0	   0	   0	0	0	0	#_Wtlen_1         
    -3	   3	   3.278	0	0	0	-3	0	0	   0	   0	0	0	0	#_Wtlen_2         
-   -3	  15	      12	0	0	0	-3	0	0	   0	   0	0	0	0	#_Mat50%          
+   -3	  15	      11	0	0	0	-3	0	0	   0	   0	0	0	0	#_Mat50%          
    -3	   3	   -0.45	0	0	0	-3	0	0	   0	   0	0	0	0	#_Mat_slope       
    -3	   3	       1	0	0	0	-3	0	0	   0	   0	0	0	0	#_Eggs_alpha      
-   -3	   3	       0	0	0	0	-3	0	0	   0	   0	0	0	0	#_Eggs_beta       
- #   0	   2	       1	0	0	0	-3	0	0	   0	   0	0	0	0	#_RecrDist_month_1
+   -3	   3	       0	0	0	0	-3	0	0	   0	   0	0	0	0	#_Eggs_beta      
     1	   1	       1	0	0	0	-3	0	0	   0	   0	0	0	0	#_CohortGrowDev   
 1e-07	   1	     0.5	0	0	0	-3	0	0	   0	   0	0	0	0	#_FracFemale      
 #_no timevary MG parameters
@@ -87,71 +83,75 @@
 #_no timevary SR parameters
 1 #do_recdev:  0=none; 1=devvector (R=F(SSB)+dev); 2=deviations (R=F(SSB)+dev); 3=deviations (R=R0*dev; dev2=R-f(SSB)); 4=like 3 with sum(dev2) adding penalty
 1989 # first year of main recr_devs; early devs can preceed this era
-2024 # last year of main recr_devs; forecast devs start in following year
+2023 # last year of main recr_devs; forecast devs start in following year
 1 #_recdev phase
 0 # (0/1) to read 13 advanced options
 #
 #Fishing Mortality info
 0.3 # F ballpark
--2024 # F ballpark year (neg value to disable)
+-2023 # F ballpark year (neg value to disable)
 3 # F_Method:  1=Pope; 2=instan. F; 3=hybrid (hybrid is recommended)
-4 # max F or harvest rate, depends on F_Method
-4 # N iterations for tuning F in hybrid method (recommend 3 to 7)
+3 # max F or harvest rate, depends on F_Method
+3 # N iterations for tuning F in hybrid method (recommend 3 to 7)
 #
 #_initial_F_parms; count = 0
 #
 #_Q_setup for fleets with cpue or survey data
 #_fleet	link	link_info	extra_se	biasadj	float  #  fleetname
-    2	1	0	0	0	0	#_ECOCADIZ   
-    3	1	0	0	0	0	#_PELAGO     
-    4	1	0	0	0	0	#_ECORECLUTAS
+2	1	0	0	0	0	#_PELAGO    
+3	1	0	0	0	0	#_ECOCADIZ   
+4 1 0 0 0 0 #_BOCADEVA
+5	1	0	0	0	0	#_ECORECLUTAS
 -9999	0	0	0	0	0	#_terminator 
 #_Q_parms(if_any);Qunits_are_ln(q)
 #_LO	HI	INIT	PRIOR	PR_SD	PR_type	PHASE	env-var	use_dev	dev_mnyr	dev_mxyr	dev_PH	Block	Blk_Fxn  #  parm_name
+-30	15	0.1	0	0	0	2	0	0	0	0	0	0	0	#_LnQ_base_PELAGO   
 -30	15	0.1	0	0	0	2	0	0	0	0	0	0	0	#_LnQ_base_ECOCADIZ   
--30	15	0.1	0	0	0	2	0	0	0	0	0	0	0	#_LnQ_base_PELAGO     
+-30 15  0.1 0 0 0 2 0 0 0 0 0 0 0 #_LnQ_base_BOCADEVA 
 -30	15	0.1	0	0	0	2	0	0	0	0	0	0	0	#_LnQ_base_ECORECLUTAS
 #_no timevary Q parameters
 #
 #_size_selex_patterns
 #_Pattern	Discard	Male	Special
-1	0	0	0	#_1 SEINE      
-1	0	0	0	#_2 ECOCADIZ   
-1	0	0	0	#_3 PELAGO     
-1	0	0	0	#_4 ECORECLUTAS
+1	0	0	0	#_1 SEINE     
+1	0	0	0	#_2 PELAGO 
+1	0	0	0	#_3 ECOCADIZ   
+0 0 0 0 #_4 BOCADEVA
+1	0	0	0	#_5 ECORECLUTAS
 #
 #_age_selex_patterns
 #_Pattern	Discard	Male	Special
-0	0	0	0	#_1 SEINE      
-0	0	0	0	#_2 ECOCADIZ   
-0	0	0	0	#_3 PELAGO     
-0	0	0	0	#_4 ECORECLUTAS
+0	  0	0	0	  #_1 SEINE  
+10	0	0	0	  #_2 PELAGO 
+0	  0	0	0	  #_3 ECOCADIZ   
+10  0 0 0   #_4 BOCADEVA   
+0	  0	0	0	  #_5 ECORECLUTAS
 #
 #_SizeSelex
 #_LO	HI	INIT	PRIOR	PR_SD	PR_type	PHASE	env-var	use_dev	dev_mnyr	dev_mxyr	dev_PH	Block	Blk_Fxn  #  parm_name
 -1	10	8 	0	0	0	2	0	0	0	0	0	1	1	#_SizeSel_P_1_SEINE      
--1	20	10	0	0	0	2	0	0	0	0	0	1	1	#_SizeSel_P_2_SEINE      
+-1	20	10	0	0	0	2	0	0	0	0	0	1	1	#_SizeSel_P_2_SEINE  
+-3	15	10	0	0	0	3	0	0	0	0	0	0	0	#_SizeSel_P_1_PELAGO     
+-3	20	12	0	0	0	3	0	0	0	0	0	0	0	#_SizeSel_P_2_PELAGO 
 -1	15	10	0	0	0	3	0	0	0	0	0	0	0	#_SizeSel_P_1_ECOCADIZ   
 -1	20	12	0	0	0	3	0	0	0	0	0	0	0	#_SizeSel_P_2_ECOCADIZ   
--3	15	10	0	0	0	3	0	0	0	0	0	0	0	#_SizeSel_P_1_PELAGO     
--3	20	12	0	0	0	3	0	0	0	0	0	0	0	#_SizeSel_P_2_PELAGO     
 -3  15 	6 	0	0	0	3	0	0	0	0	0	0	0	#_SizeSel_P_1_ECORECLUTAS
 -3 	20 	10 	0	0	0	3	0	0	0	0	0	0	0	#_SizeSel_P_2_ECORECLUTAS
 #_AgeSelex
 #-2	5.5	0	0	0	0	3	0	0	0	0	0	0	0	#_AgeSel_P_1_SEINE      
-#-1	5.5	1	0	0	0	3	0	0	0	0	0	0	0	#_AgeSel_P_2_SEINE      
+#-1	5.5	1	0	0	0	3	0	0	0	0	0	0	0	#_AgeSel_P_2_SEINE    
+#-2 	5.5 1	0	0	0	3	0	0	0	0	0	0	0	#_AgeSel_P_1_PELAGO     
+#-1 	5.5 1	0	0	0	3	0	0	0	0	0	0	0	#_AgeSel_P_2_PELAGO 
 #-2	5.5	0	0	0	0	3	0	0	0	0	0	0	0	#_AgeSel_P_1_ECOCADIZ   
 #-1	5.5	1	0	0	0	3	0	0	0	0	0	0	0	#_AgeSel_P_2_ECOCADIZ   
-#-2 	5.5 1	0	0	0	3	0	0	0	0	0	0	0	#_AgeSel_P_1_PELAGO     
-#-1 	5.5 1	0	0	0	3	0	0	0	0	0	0	0	#_AgeSel_P_2_PELAGO     
 #-2	5.5	0	0	0	0	3	0	0	0	0	0	0	0	#_AgeSel_P_1_ECORECLUTAS
 #-1	5.5	1	0	0	0	3	0	0	0	0	0	0	0	#_AgeSel_P_2_ECORECLUTAS
 # timevary selex parameters 
 #_LO  HI  INIT  PRIOR PR_SD PR_type PHASE
  -1   15  8     0     0     0       2   #_SizeSel_P_1_SEINE_1 
  -1   15  10    0     0     0       2   #_SizeSel_P_1_SEINE_2 
- -1   20  10    0     0     0       3   #_SizeSel_P_2_SEINE_1   
- -1   20  11    0     0     0       3   #_SizeSel_P_2_SEINE_2   
+ -1   15  8     0     0     0       2   #_SizeSel_P_2_SEINE_1 
+ -1   15  10    0     0     0       2   #_SizeSel_P_2_SEINE_2 
 # info on dev vectors created for selex parms are reported with other devs after tag parameter section
 #
 0 #  use 2D_AR1 selectivity(0/1):  experimental feature
@@ -162,6 +162,10 @@
 #
 # Input variance adjustments factors: 
 #_Data_type	fleet	Value
+4 1 0.170795 #0.170661  #_seine
+4 2 0.204118 #0.204124  #_pelago
+4 3 0.266406 #0.266264  #_ecocadiz
+4 5 0.180673 #0.180860  #_ecoreclutas
 -9999	0	        0	#_terminator               
 #
 1 #_maxlambdaphase
