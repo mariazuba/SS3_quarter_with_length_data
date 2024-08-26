@@ -47,7 +47,7 @@ for(i in 1:length(esc)){
   dev.off()
   
   
-  
+
   ## Fit data: Abundance indices ----
   png(file.path(paste0(path,"/Indices_fit.png")),width=6,height=7,res=300,units='in')
   sspar(mfrow = c(4, 2), plot.cex = 0.6)
