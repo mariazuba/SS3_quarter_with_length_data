@@ -32,7 +32,7 @@ for(i in 1:length(esc)){
   
   mkdir(paste0("report/run/",esc[i]))
   path<-paste0("report/run/",esc[i])
-  
+  path_out<-paste0("output/run/",esc[i])
   # Figures --------------------------------------------
   ## Temporal coverage of input data ----
   png(file.path(paste0(path,"/fig_input_data.png")),width=9,height=5,res=300,units='in')
@@ -157,6 +157,10 @@ for(i in 1:length(esc)){
               showsampsize = F,showeffN = F,mainTitle = T)
   dev.off()
   
+  ### historical mean length
+  file.copy(from=paste0(path_out,"/plots/comp_lenfit_data_weighting_TA1.8_SEINE.png"),
+            to=paste0(path,"/fig_comp_lenfit_SEINE.png"), 
+            overwrite=T)
   
   ### *PELAGO spring survey* ----
   png(file.path(paste0(path,"/fig_length_fit_Pelago.png")),width=8,height=9,res=300,units='in')
@@ -164,11 +168,22 @@ for(i in 1:length(esc)){
               showsampsize = F,showeffN = F,mainTitle = T)
   dev.off()
   
+  ### historical mean length
+  file.copy(from=paste0(path_out,"/plots/comp_lenfit_data_weighting_TA1.8_PELAGO.png"),
+            to=paste0(path,"/fig_comp_lenfit_PELAGO.png"), 
+            overwrite=T)
+  
   ### *ECOCADIZ summer survey* ----
   png(file.path(paste0(path,"/fig_length_fit_Ecocadiz.png")),width=8,height=9,res=300,units='in')
   SSplotComps(output, subplots = c(1),kind = "LEN",fleets = 3,maxrows = 4,maxcols = 4,
               showsampsize = F,showeffN = F,mainTitle = T)
   dev.off()
+  
+  ### historical mean length
+  file.copy(from=paste0(path_out,"/plots/comp_lenfit_data_weighting_TA1.8_ECOCADIZ.png"),
+            to=paste0(path,"/fig_comp_lenfit_ECOCADIZ.png"), 
+            overwrite=T)
+  
   
   ### *ECOCADIZ-RECLUTAS fall survey* ----
   
@@ -176,6 +191,12 @@ for(i in 1:length(esc)){
   SSplotComps(output, subplots = c(1),kind = "LEN",fleets = 5,maxrows = 4,maxcols = 4,
               showsampsize = F,showeffN = F,mainTitle = T)
   dev.off()
+  
+  ### historical mean length
+  file.copy(from=paste0(path_out,"/plots/comp_lenfit_data_weighting_TA1.8_ECORECLUTAS.png"),
+            to=paste0(path,"/fig_comp_lenfit_ECORECLUTAS.png"), 
+            overwrite=T)
+  
   
   ## Residuals length composition by source data
   
@@ -202,6 +223,11 @@ for(i in 1:length(esc)){
   SSplotComps(output, subplots = c(24),kind = "LEN",fleets = 5,maxrows = 12,maxcols = 5,
               showsampsize = F,showeffN = F)
   dev.off()
+  
+  file.copy(from=paste0(path_out,"/plots/comp_lenfit__multi-fleet_comparison.png"),
+            to=paste0(path,"/fig_comp_lenfit_multi-fleet_comparison.png"), 
+            overwrite=T)
+  
   
   ## Run test indices ----
   png(file.path(paste0(path,"/fig_runtest_residuals_indices.png")),width=7,height=7,res=300,units='in')
