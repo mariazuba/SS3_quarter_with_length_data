@@ -1,5 +1,6 @@
 # ojiva madurez
 
+# datos de Millán 1999. https://doi.org/10.1016/S0165-7836(99)00010-7
 # Ejemplo de datos (asegúrate de usar tus propios datos)
 longitudes <-c(7, 7.5,  8,    8.5,  9,   9.5,  10,   10.5,  11,  11.5, 12, 12.5,  13,   13.5, 14, 14.5, 15,15.5, 16,16.5, 17,17.5, 18)
 madurez    <-c(0, 0.03, 0.04, 0.08, 0.1, 0.2, 0.3,  0.4,  0.5, 0.6,  0.7, 0.8, 0.85, 0.95,  1, 1,    1,  1,    1,1,     1, 1,1    )
