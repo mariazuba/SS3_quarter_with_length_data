@@ -38,7 +38,7 @@ Warning 37 Adjustment: Adjusted selparm out of base parm bounds. Phase: 3; Inter
 Warning 38 Adjustment: Adjusted selparm out of base parm bounds. Phase: 3; Inter: 771; fleet: 1; base_parm#: 1; y: 2021; min: -1; max: 10; base: 3.92223 timevary_val: 10.2903  Size_inflection_SEINE(1)
 Warning 39 Adjustment: Adjusted selparm out of base parm bounds. Phase: 3; Inter: 771; fleet: 1; base_parm#: 1; y: 2022; min: -1; max: 10; base: 3.92223 timevary_val: 10.2903  Size_inflection_SEINE(1)
 Warning 40 Adjustment: Adjusted selparm out of base parm bounds. Phase: 3; Inter: 771; fleet: 1; base_parm#: 1; y: 2023; min: -1; max: 10; base: 3.92223 timevary_val: 10.2903  Size_inflection_SEINE(1)
-Warning 41 : poor convergence in Fmsy, final dy/dy2= -0.152704
+Warning 41 : poor convergence in Fmsy, final dy/dy2= -0.15378
 Warning 42 : Fmsy/mey is >3x of Fspr are you sure?  check for convergence 
 Warning 43 : Fmsy.mey is close to max allowed; check for convergence 
 Warning 44 Adjustment: Adjusted selparm out of base parm bounds. Phase: 3; Inter: 981; fleet: 1; base_parm#: 1; y: 1989; min: -1; max: 10; base: 3.92223 timevary_val: 10.3252  Size_inflection_SEINE(1)

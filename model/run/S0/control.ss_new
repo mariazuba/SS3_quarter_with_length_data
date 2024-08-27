@@ -83,7 +83,7 @@
  -3 3 3.278 0 0 0 -3 0 0 0 0 0 0 0 # Wtlen_2_Fem_GP_1
 # Sex: 1  BioPattern: 1  Maturity&Fecundity
  -3 15 11 0 0 0 -3 0 0 0 0 0 0 0 # Mat50%_Fem_GP_1
- -3 3 -0.45 0 0 0 -3 0 0 0 0 0 0 0 # Mat_slope_Fem_GP_1
+ -3 3 -0.98 0 0 0 -3 0 0 0 0 0 0 0 # Mat_slope_Fem_GP_1
  -3 3 1 0 0 0 -3 0 0 0 0 0 0 0 # Eggs/kg_inter_Fem_GP_1
  -3 3 0 0 0 0 -3 0 0 0 0 0 0 0 # Eggs/kg_slope_wt_Fem_GP_1
 # Hermaphroditism
