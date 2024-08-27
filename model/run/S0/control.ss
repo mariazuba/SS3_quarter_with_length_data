@@ -61,9 +61,7 @@
    -3	  15	      11	0	0	0	-3	0	0	   0	   0	0	0	0	#_Mat50%          
    -3	   3	   -0.45	0	0	0	-3	0	0	   0	   0	0	0	0	#_Mat_slope       
    -3	   3	       1	0	0	0	-3	0	0	   0	   0	0	0	0	#_Eggs_alpha      
-   -3	   3	       0	0	0	0	-3	0	0	   0	   0	0	0	0	#_Eggs_beta       
-#    0	   2	     0.3	0	0	0	-3	0	0	   0	   0	0	0	0	#_RecrDist_month_1
-#    0    2       0.7  0 0 0 -3  0 0    0     0  0 0 0 #_RecrDist_month_2
+   -3	   3	       0	0	0	0	-3	0	0	   0	   0	0	0	0	#_Eggs_beta      
     1	   1	       1	0	0	0	-3	0	0	   0	   0	0	0	0	#_CohortGrowDev   
 1e-07	   1	     0.5	0	0	0	-3	0	0	   0	   0	0	0	0	#_FracFemale      
 #_no timevary MG parameters
@@ -123,16 +121,16 @@
 #
 #_age_selex_patterns
 #_Pattern	Discard	Male	Special
-0	0	0	0	  #_1 SEINE  
-10	0	0	0	#_2 PELAGO 
-0	0	0	0	  #_3 ECOCADIZ   
-10 0 0 0   #_4 BOCADEVA   
-0	0	0	0	  #_5 ECORECLUTAS
+0	  0	0	0	  #_1 SEINE  
+10	0	0	0	  #_2 PELAGO 
+0	  0	0	0	  #_3 ECOCADIZ   
+10  0 0 0   #_4 BOCADEVA   
+0	  0	0	0	  #_5 ECORECLUTAS
 #
 #_SizeSelex
 #_LO	HI	INIT	PRIOR	PR_SD	PR_type	PHASE	env-var	use_dev	dev_mnyr	dev_mxyr	dev_PH	Block	Blk_Fxn  #  parm_name
 -1	10	8 	0	0	0	2	0	0	0	0	0	1	1	#_SizeSel_P_1_SEINE      
--1	20	10	0	0	0	2	0	0	0	0	0	0	0	#_SizeSel_P_2_SEINE  
+-1	20	10	0	0	0	2	0	0	0	0	0	1	1	#_SizeSel_P_2_SEINE  
 -3	15	10	0	0	0	3	0	0	0	0	0	0	0	#_SizeSel_P_1_PELAGO     
 -3	20	12	0	0	0	3	0	0	0	0	0	0	0	#_SizeSel_P_2_PELAGO 
 -1	15	10	0	0	0	3	0	0	0	0	0	0	0	#_SizeSel_P_1_ECOCADIZ   
@@ -152,6 +150,8 @@
 #_LO  HI  INIT  PRIOR PR_SD PR_type PHASE
  -1   15  8     0     0     0       2   #_SizeSel_P_1_SEINE_1 
  -1   15  10    0     0     0       2   #_SizeSel_P_1_SEINE_2 
+ -1   15  8     0     0     0       2   #_SizeSel_P_2_SEINE_1 
+ -1   15  10    0     0     0       2   #_SizeSel_P_2_SEINE_2 
 # info on dev vectors created for selex parms are reported with other devs after tag parameter section
 #
 0 #  use 2D_AR1 selectivity(0/1):  experimental feature
