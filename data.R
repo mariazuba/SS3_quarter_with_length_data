@@ -12,6 +12,9 @@ esc<-list.files(run_esc)
 for(i in 1:length(esc)){
   run.dir  <- paste0(run_esc,esc[i])
   inputs <- r4ss::SS_read(dir = run.dir)
+  # setting 
+  sigmaR<-inputs$ctl$SR_parms["SR_sigmaR", "INIT"]
+  
   
   mkdir(paste0("data/run/",esc[i]))
   data_esc<<-paste0("data/run/",esc[i])
@@ -22,7 +25,7 @@ for(i in 1:length(esc)){
   lencomp<-inputs$dat$lencomp 
   
   
-  save(inputs,     
+  save(inputs,  sigmaR,   
        file=paste0(data_esc,"/inputs.RData"))
   
   #'*-------------------------------------------------------------*
