@@ -35,28 +35,116 @@ for(i in 1:length(esc)){
   
   # Figures --------------------------------------------
   ## Temporal coverage of input data ----
-  png(file.path(paste0(path,"/input_data.png")),width=9,height=5,res=300,units='in')
+  png(file.path(paste0(path,"/fig_input_data.png")),width=9,height=5,res=300,units='in')
   sspar(mfrow = c(1, 1), plot.cex = 0.8)
   SSplotData(output, subplots = 2,cex.main = 0.8,cex = 1,margins = c(2.1, 2.1, 1.1, 8.1))
   dev.off()
   
   ## Growth curve, length-weight relationship and maturity ----
-  png(file.path(paste0(path,"/Biology.png")),width=10,height=8,res=300,units='in')
+  png(file.path(paste0(path,"/fig_biology.png")),width=10,height=8,res=300,units='in')
   sspar(mfrow = c(2, 2), plot.cex = 0.8)
   SSplotBiology(output, subplot = c(1,5,6),seas=4,mainTitle = FALSE)
   dev.off()
   
   
+  ## Catches by $uarters
+  catches<-  inputs$dat$catch%>% filter(year>-999) %>% select(c(year,seas,catch)) 
+  fig1b<- ggplot(catches, aes(x = year, y = catch,fill=factor(seas))) +
+    geom_bar(stat = "identity") +
+    labs(x = "Year",y = "Catches (ton)",title = "",fill = "Quarters" ) +
+    theme_bw() +
+    theme(plot.title = element_text(hjust = 0.5),legend.position = "top")
+  
+  ggsave(file.path(paste0(path,"/fig_catches.png")), fig1b,  width=8, height=5)
+  
+  
 
   ## Fit data: Abundance indices ----
-  png(file.path(paste0(path,"/Indices_fit.png")),width=6,height=7,res=300,units='in')
+  png(file.path(paste0(path,"/fig_indices_fit.png")),width=6,height=7,res=300,units='in')
   sspar(mfrow = c(4, 2), plot.cex = 0.6)
   SSplotIndices(output, subplots = c(2,3),mainTitle = T)
   dev.off()
   
   
+  ## length composition Seine ----
+  inputs$dat$lencomp[inputs$dat$lencomp==0]<-NA
+  lencomp<-  inputs$dat$lencomp  %>% filter(FltSvy==1) %>% 
+    select(c(Yr,Seas,paste0("l", seq(2.5, 22, by = 0.5)))) %>% 
+    melt(id.vars=c("Yr","Seas")) %>% 
+     mutate(variable = factor(variable, levels = paste0("l", seq(2.5, 22, by = 0.5)),
+                             labels = seq(2.5, 22, by = 0.5)))
+  
+  figxx1<-lencomp %>% filter(Yr<2005) %>% ggplot(aes(x=as.numeric(variable), y=round(value/1000,2))) + 
+    geom_bar(stat="identity",fill="gray75")+
+    facet_grid(Yr~Seas,  as.table = TRUE,scale="free",
+               labeller = labeller(Seas = c("3" = "Q1", 
+                                            "6" = "Q2",
+                                            "9" = "Q3", 
+                                            "12" = "Q4"))) +
+    labs(x = 'Length (cm)', y = 'Numbers x 10^3') +
+    theme(panel.background = element_rect(fill ="gray99")) +
+    theme(panel.grid=element_line(color=NA)) +
+    ggtitle('SEINE')+
+    theme(plot.title = element_text(size = 12),
+          axis.title = element_text(size = 6),
+          axis.text = element_text(size = 6),
+          strip.text = element_text(size = 6),
+          panel.background = element_rect(fill = "white"),
+          strip.background = element_rect(colour = "white", fill = "white")) + theme(legend.position = 'top')
+  ggsave(file.path(paste0(path,"/fig_lencomp_by_quartersSeine_until2000.png")), figxx1,  width=7, height=9)
+  
+  
+  figxx<-lencomp %>% filter(Yr>2005) %>% ggplot(aes(x=as.numeric(variable), y=round(value/1000,2))) + 
+    geom_bar(stat="identity",fill="gray75")+
+    facet_grid(Yr~Seas,  as.table = TRUE,scale="free",
+               labeller = labeller(Seas = c("3" = "Q1", 
+                                            "6" = "Q2",
+                                            "9" = "Q3", 
+                                            "12" = "Q4"))) +
+    labs(x = 'Length (cm)', y = 'Numbers x 10^3') +
+    theme(panel.background = element_rect(fill ="gray99")) +
+    theme(panel.grid=element_line(color=NA)) +
+    ggtitle('SEINE')+
+    theme(plot.title = element_text(size = 12),
+          axis.title = element_text(size = 6),
+          axis.text = element_text(size = 6),
+          strip.text = element_text(size = 6),
+          panel.background = element_rect(fill = "white"),
+          strip.background = element_rect(colour = "white", fill = "white")) + theme(legend.position = 'top')
+  ggsave(file.path(paste0(path,"/fig_lencomp_by_quartersSeine_until2023.png")), figxx,  width=7, height=9)
+  
+  ## length composition surveys ----
+
+  lencompsurveys<-  inputs$dat$lencomp  %>% filter(FltSvy>1) %>% 
+    select(c(Yr,Seas,FltSvy,paste0("l", seq(2.5, 22, by = 0.5)))) %>% 
+    melt(id.vars=c("Yr","Seas","FltSvy")) %>% 
+    mutate(variable = factor(variable, levels = paste0("l", seq(2.5, 22, by = 0.5)),
+                             labels = seq(2.5, 22, by = 0.5)))
+  
+  figx3<- lencompsurveys %>% 
+    ggplot(aes(x=as.numeric(variable), y=round(value/1000,2))) + 
+    geom_bar(stat="identity",fill="gray75")+
+    facet_grid(Yr~FltSvy,  as.table = TRUE,scale="free",
+               labeller = labeller(FltSvy = c("2" = "PELAGO", 
+                                            "3" = "ECOCADIZ",
+                                            "5" = "ECOCADIZ-RECLUTAS"))) +
+    labs(x = 'Length (cm)', y = 'Numbers x 10^3') +
+    theme(panel.background = element_rect(fill ="gray99")) +
+    theme(panel.grid=element_line(color=NA)) +
+    ggtitle('')+
+    theme(plot.title = element_text(size = 12),
+          axis.title = element_text(size = 6),
+          axis.text = element_text(size = 6),
+          strip.text = element_text(size = 6),
+          panel.background = element_rect(fill = "white"),
+          strip.background = element_rect(colour = "white", fill = "white")) + 
+    theme(legend.position = 'top')
+  ggsave(file.path(paste0(path,"/fig_lencomp_by_quartersSurveys.png")), figx3,  width=4, height=8)
+  
+  
+  
   ## Fit data: Length composition (aggregated) ----
-  png(file.path(paste0(path,"/Length_fit_agg.png")),width=8,height=9,res=300,units='in')
+  png(file.path(paste0(path,"/fig_length_fit_agg.png")),width=8,height=9,res=300,units='in')
   SSplotComps(output, subplots = c(21),kind = "LEN",maxrows = 2,maxcols = 2,
               showsampsize = F,showeffN = F,mainTitle = T)
   dev.off()
@@ -64,27 +152,27 @@ for(i in 1:length(esc)){
   
   ## Fit data: Length composition by source data ----
   ### *FLEET by quarters* ----
-  png(file.path(paste0(path,"/Length_fit_Seine.png")),width=10,height=9,res=300,units='in')
+  png(file.path(paste0(path,"/fig_length_fit_Seine.png")),width=10,height=9,res=300,units='in')
   SSplotComps(output, subplots = c(1),kind = "LEN",fleets = 1,maxrows = 12,maxcols =12,
               showsampsize = F,showeffN = F,mainTitle = T)
   dev.off()
   
   
   ### *PELAGO spring survey* ----
-  png(file.path(paste0(path,"/Length_fit_Pelago.png")),width=8,height=9,res=300,units='in')
+  png(file.path(paste0(path,"/fig_length_fit_Pelago.png")),width=8,height=9,res=300,units='in')
   SSplotComps(output, subplots = c(1),kind = "LEN",fleets = 2,maxrows = 6,maxcols = 4,
               showsampsize = F,showeffN = F,mainTitle = T)
   dev.off()
   
   ### *ECOCADIZ summer survey* ----
-  png(file.path(paste0(path,"/Length_fit_Ecocadiz.png")),width=8,height=9,res=300,units='in')
+  png(file.path(paste0(path,"/fig_length_fit_Ecocadiz.png")),width=8,height=9,res=300,units='in')
   SSplotComps(output, subplots = c(1),kind = "LEN",fleets = 3,maxrows = 4,maxcols = 4,
               showsampsize = F,showeffN = F,mainTitle = T)
   dev.off()
   
   ### *ECOCADIZ-RECLUTAS fall survey* ----
   
-  png(file.path(paste0(path,"/Length_fit_EcocadizRecl.png")),width=8,height=9,res=300,units='in')
+  png(file.path(paste0(path,"/fig_length_fit_EcocadizRecl.png")),width=8,height=9,res=300,units='in')
   SSplotComps(output, subplots = c(1),kind = "LEN",fleets = 5,maxrows = 4,maxcols = 4,
               showsampsize = F,showeffN = F,mainTitle = T)
   dev.off()
@@ -92,52 +180,158 @@ for(i in 1:length(esc)){
   ## Residuals length composition by source data
   
   ### *FLEET by quarters* ----
-  png(file.path(paste0(path,"/Length_residuals_Seine.png")),width=7,height=3,res=300,units='in')
+  png(file.path(paste0(path,"/fig_length_residuals_Seine.png")),width=7,height=3,res=300,units='in')
   SSplotComps(output, subplots = c(24),kind = "LEN",fleets = 1,maxrows = 12,maxcols = 5,
               showsampsize = F,showeffN = F)
   dev.off()
   
   ### *PELAGO spring survey* ----
-  png(file.path(paste0(path,"/Length_residuals_Pelago.png")),width=7,height=3,res=300,units='in')
+  png(file.path(paste0(path,"/fig_length_residuals_Pelago.png")),width=7,height=3,res=300,units='in')
   SSplotComps(output, subplots = c(24),kind = "LEN",fleets =2,maxrows = 12,maxcols = 5,
               showsampsize = F,showeffN = F)
   dev.off()
   
   ### *ECOCADIZ summer survey* ----
-  png(file.path(paste0(path,"/Length_residuals_Ecocadiz.png")),width=7,height=3,res=300,units='in')
+  png(file.path(paste0(path,"/fig_length_residuals_Ecocadiz.png")),width=7,height=3,res=300,units='in')
   SSplotComps(output, subplots = c(24),kind = "LEN",fleets = 3,maxrows = 12,maxcols = 5,
               showsampsize = F,showeffN = F)
   dev.off()
   
   ### *ECOCADIZ-RECLUTAS fall survey* ----
-  png(file.path(paste0(path,"/Length_residuals_EcocadizRecl.png")),width=7,height=3,res=300,units='in')
+  png(file.path(paste0(path,"/fig_length_residuals_EcocadizRecl.png")),width=7,height=3,res=300,units='in')
   SSplotComps(output, subplots = c(24),kind = "LEN",fleets = 5,maxrows = 12,maxcols = 5,
               showsampsize = F,showeffN = F)
   dev.off()
   
   ## Run test indices ----
-  png(file.path(paste0(path,"/Runtest_residuals_indices.png")),width=7,height=7,res=300,units='in')
+  png(file.path(paste0(path,"/fig_runtest_residuals_indices.png")),width=7,height=7,res=300,units='in')
   sspar(mfrow = c(3, 2), plot.cex = 0.8)
   SSplotRunstest(output,subplots = "cpue", add = TRUE, legendcex = 0.8,verbose = F)
   SSplotJABBAres(output,subplots = "cpue", add = TRUE, legendcex = 0.8,verbose = F)
   dev.off()
   
   ## Run test length ----
-  png(file.path(paste0(path,"/Runtest_residuals_Length.png")),width=7,height=7,res=300,units='in')
+  png(file.path(paste0(path,"/fig_runtest_residuals_Length.png")),width=7,height=7,res=300,units='in')
   sspar(mfrow = c(3, 2), plot.cex = 0.8)
   SSplotRunstest(output,subplots = "len", add = TRUE, legendcex = 0.8,verbose = F)
   SSplotJABBAres(output,subplots = "len", add = TRUE, legendcex = 0.8,verbose = F)
   dev.off()
   
   ## Selectivity ----
-  png(file.path(paste0(path,"/Selectividad.png")),width=6,height=5,res=300,units='in')
+  png(file.path(paste0(path,"/fig_length_selectividad.png")),width=6,height=5,res=300,units='in')
   SSplotSelex(output,subplots =1)
   dev.off()
   
+  ## Selectivity ----
+  png(file.path(paste0(path,"/fig_age_selectivity.png")),width=6,height=5,res=300,units='in')
+  SSplotSelex(output,subplots =2)
+  dev.off()
+  
+  ## Stock-Recluta ----
+  png(file.path(paste0(path,"/fig_stock-recluta.png")),width=4,height=4,res=300,units='in')
+  sspar(mfrow = c(1, 1), plot.cex = 0.6)
+  SSplotSpawnrecruit(output,subplots =2,pwidth = 4,pheight = 4,legendloc ="bottomright")
+  dev.off()
+  
+  ##  Recruitment devs
+  png(file.path(paste0(path,"/fig_Recdevs.png")),width=5,height=5,res=300,units='in')
+  sspar(mfrow = c(1, 1), plot.cex = 0.8)
+  SSplotRecdevs(output,subplots = 2,pwidth = 5,pheight = 5)
+  dev.off()
   # 
-  # # tablas ----
-
-  indices <- inputs$dat$CPUE%>%
+  
+  ## time series ----
+  stdreptlist<-data.frame(output$derived_quants[,1:3])
+  head(stdreptlist)
+  head(summary)
+  
+  # Define the range of years to include
+  start_year <- 1989
+  end_year <- 2023
+  
+  # Define a function to process data
+  process_data <- function(data, pattern, value_col, stddev_col = NULL) {
+    # Ensure the required column exists
+    if (!"Label" %in% colnames(data)) {
+      stop("The 'Label' column is missing in the data frame.")
+    }
+    
+    filtered_data <- data %>%
+      filter(grepl(pattern, Label)) %>%
+      mutate(year = as.numeric(sub(paste0(pattern, "_"), "", Label))) %>%
+      filter(!is.na(year) & year >= start_year & year <= end_year) %>%
+      select(year, Value, StdDev)
+    
+    # Remove StdDev column if not needed
+    if (is.null(stddev_col)) {
+      filtered_data <- filtered_data %>% select(-StdDev)
+    }
+    
+    return(filtered_data)
+  }
+  
+  # Process 'summary' data
+  process_summary_data <- function(data, pattern, value_col) {
+    if (!"V1" %in% colnames(data)) {
+      stop("The 'V1' column is missing in the summary data frame.")
+    }
+    
+    filtered_data <- data %>%
+      filter(grepl(pattern, V1)) %>%
+      mutate(year = as.numeric(sub(paste0(pattern, "_"), "", V1))) %>%
+      filter(!is.na(year) & year >= start_year & year <= end_year) %>%
+      select(year, value_col)
+    
+    return(filtered_data)
+  }
+  
+  # Apply the function to each dataset
+  ssb <- process_data(stdreptlist, "SSB", "Value", "StdDev")
+  ssb$type<-"SSB"
+  recr <- process_data(stdreptlist, "Recr", "Value", "StdDev")
+  recr$type<-"Rt"
+  ft <- process_data(stdreptlist, "F", "Value", "StdDev")
+  ft$type<-"Ft"
+  bt <- process_summary_data(summary, "TotBio", "V2") %>% mutate(StdDev=NA)
+  colnames(bt)<-c("year","Value","StdDev")
+  bt$type<-"Bt"
+  
+  catch <- process_summary_data(summary, "TotCatch", "V2") %>% mutate(StdDev=NA)
+  colnames(catch)<-c("year","Value","StdDev")
+  catch$type<-"Catch"
+  
+  data<-rbind(ssb,recr,ft,bt)
+  data <- data %>%
+    mutate(
+      Value = as.numeric(Value),
+      StdDev = as.numeric(StdDev)) %>%
+    mutate(
+      lower = case_when(
+        is.na(StdDev) ~ 0,
+        TRUE ~ Value - 1.96 * StdDev),
+      upper = case_when(
+        is.na(StdDev) ~ 0,
+        TRUE ~ Value + 1.96 * StdDev))
+  
+  
+  fig1a<- ggplot(data, aes(x = year, y = Value)) +
+    geom_line() +
+    geom_ribbon(aes(ymin = lower, ymax = upper), alpha = 0.2) +
+    facet_wrap(.~type,scales = "free")+
+    labs(x = "Year",y = "Value",title = "") +
+    theme_bw() +
+    theme(plot.title = element_text(hjust = 0.5),legend.position = "top")
+  ggsave(file.path(paste0(path,"/fig_time_series.png")), fig1a,  width=8, height=5)
+  
+  
+## tablas ----
+tb_catch <- inputs$dat$catch%>% filter(year>-999) %>% 
+    select(c(year,seas,catch)) %>% 
+    pivot_wider(
+      names_from = "seas", 
+      values_from = c("catch"))
+  
+indices <- inputs$dat$CPUE%>%
     pivot_wider(
       names_from = "index",  # Esta columna (index) se convertirá en nombres de columnas
       values_from = c("obs", "se_log","seas")  # Estas columnas llenarán las nuevas columnas
@@ -151,10 +345,12 @@ nsamp <- inputs$dat$lencomp %>%
 
 combined_df <- left_join(indices, nsamp, by = "year")
 
-  params<-output$estimated_non_dev_parameters%>%
-    rownames_to_column(var = "Parameter")
+SR_input<-inputs$ctl$SR_parms
 
-  params_est<-params %>% 
+params<-output$estimated_non_dev_parameters %>%
+        rownames_to_column(var = "Parameter") 
+
+params_est<-params %>% 
     select(c(Parameter,Value,Phase,Min,Max,Init,Status,Parm_StDev,Gradient))
 
   natM<-inputs$ctl$natM
@@ -175,6 +371,11 @@ combined_df <- left_join(indices, nsamp, by = "year")
                     RMSE_index=jaba_cpue$RMSE.perc[5],
                     RMSE_len=jaba_len$RMSE.perc[5])
 
+  timeseries<-data %>% select(c(year,Value,type)) %>% 
+    pivot_wider(
+      names_from = "type",  # Esta columna (index) se convertirá en nombres de columnas
+      values_from = c("Value")  # Estas columnas llenarán las nuevas columnas
+    )
   
   # input parameters biology
   
@@ -277,6 +478,34 @@ ft10
 ft11 <-  biologypar%>% flextable()
 ft11
 
+
+#'*catches*
+ft12<-tb_catch %>%
+  arrange(year)%>%
+  mutate(across(where(is.numeric), ~round(.x, 0)))%>% 
+  setNames(c("Year","Q1", "Q2", "Q3", "Q4")) %>% 
+  mutate(Total=Q1+Q2+Q3+Q4)%>% 
+  flextable()
+ft12 <- add_header_row(ft12, 
+                       values = c("", "Catches (ton)"),
+                       colwidths = c(1, 5))
+ft12 <- colformat_double(ft12, digits=1, na_str = "")
+ft12 <- colformat_num(ft12,big.mark = "", na_str = "")
+ft12 <- align(ft12,part = "header", align = "center") 
+ft12 <- fontsize(ft12, size = 8, part = "body")
+ft12 <- autofit(ft12)
+ft12
+
+#'*time series*
+ft13<-timeseries%>%
+  mutate(across(where(is.numeric), ~round(.x, 2)))%>% flextable()
+ft13 <- colformat_double(ft13, digits=1, na_str = "")
+ft13 <- colformat_num(ft13,big.mark = "", na_str = "")
+ft13 <- align(ft13,part = "header", align = "center") 
+ft13 <- autofit(ft13)
+ft13
+
+
 save_as_image(ft1, path = paste0(path,"/tb_index.png"))
 save_as_image(ft2, path = paste0(path,"/tb_cv_nm.png"))
 save_as_image(ft3, path = paste0(path,"/tb_params_est.png"))
@@ -285,133 +514,17 @@ save_as_image(ft11, path = paste0(path,"/tb_biology.png"))
 
 
 save_as_image(ft6, path = paste0(path,"/tb_diagnostic.png"))
+
 save_as_image(ft7, path = paste0(path,"/tb_run_cpue.png"))
 save_as_image(ft8, path = paste0(path,"/tb_jabba_cpue.png"))
 
 save_as_image(ft9, path = paste0(path,"/tb_run_len.png"))
 save_as_image(ft10, path = paste0(path,"/tb_jabba_len.png"))
+save_as_image(ft12, path = paste0(path,"/tb_timeseries.png"))
+save_as_image(ft13, path = paste0(path,"/tb_catches.png"))
 
-
-save(ft1,ft2,ft3, file=paste0(path,"/tables_run.RData"))
+save(ft1,ft2,ft3,ft4,ft11,ft6,ft7,ft8,ft9,ft10,ft11,ft12,ft13, file=paste0(path,"/tables_run.RData"))
 }
   
-
-
-## time series ----
-# 
-# stdreptlist<-data.frame(replist$derived_quants[,1:3])
-# summary <- read.table(("model/run/ss_summary.sso"),header=F,sep="",na="NA",fill=T) 
-# 
-# year <- unique(inputs$dat$catch$year[inputs$dat$catch$year != -999])
-# 
-# 
-# ssb<-stdreptlist %>% filter(grepl("SSB", Label)) %>% mutate(year = as.numeric(sub("SSB_", "", Label))) %>%
-#   filter(!is.na(year)) %>% 
-#   filter(year >= inputs$dat$styr & year <= inputs$dat$endyr) %>%  # Filtrar por el rango de años
-#   select(year,Value,StdDev)
-# 
-# 
-# recr<-stdreptlist %>% filter(grepl("Recr", Label)) %>% mutate(year = as.numeric(sub("Recr_", "", Label))) %>%
-#   filter(!is.na(year)) %>% 
-#   filter(year >= inputs$dat$styr & year <= inputs$dat$endyr) %>%  # Filtrar por el rango de años
-#   select(year,Value,StdDev)
-# 
-# ft<-stdreptlist %>% filter(grepl("F", Label)) %>% mutate(year = as.numeric(sub("F_", "", Label))) %>% filter(!is.na(year)) %>% 
-#   filter(year >= inputs$dat$styr & year <= inputs$dat$endyr) %>%  # Filtrar por el rango de años
-#   select(year,Value,StdDev)
-# 
-# bt<-summary %>% filter(grepl("TotBio", V1)) %>% 
-#   mutate(year = as.numeric(sub("TotBio_", "", V1))) %>% 
-#   filter(!is.na(year)) %>% 
-#   filter(year >= inputs$dat$styr & year <= inputs$dat$endyr) %>%  # Filtrar por el rango de años
-#   select(year,V2)
-# 
-# catch<-summary %>% filter(grepl("TotCatch", V1)) %>% 
-#   mutate(year = as.numeric(sub("TotCatch_", "", V1))) %>% 
-#   filter(!is.na(year)) %>% 
-#   filter(year >= inputs$dat$styr & year <= inputs$dat$endyr) %>%  # Filtrar por el rango de años
-#   select(year,V2)
-# 
-# 
-# data<-data.frame(yrs=recr$year,
-#                  Rt=round(as.numeric(recr$Value),0), 
-#                  BD=round(as.numeric(ssb$Value),0),
-#                  Bt=round(as.numeric(bt$V2),0),
-#                  Ft=round(as.numeric(ft$Value),2),
-#                  Ct=round(as.numeric(catch$V2),0))
-# data
-# 
-# rt<- data.frame(x=recr$year,
-#                 y=recr$Value,
-#                 lower = (recr$Value-1.96*recr$StdDev),
-#                 upper = (recr$Value+1.96*recr$StdDev))%>% 
-#   mutate(indicador='Rt')
-# Bt<- data.frame(x=bt$year,
-#                 y=as.numeric(bt$V2))%>% 
-#   mutate(indicador='BT')
-# 
-# Ct<- data.frame(x=catch$year,
-#                 y=as.numeric(catch$V2))%>% 
-#   mutate(indicador='CT')
-# 
-# bd<- data.frame(x=ssb$year,
-#                 y=ssb$Value,
-#                 lower = (ssb$Value-1.96*ssb$StdDev),
-#                 upper = (ssb$Value+1.96*ssb$StdDev))%>% 
-#   mutate(indicador='SSB')
-# 
-# Ft<- data.frame(x=ft$year,
-#                 y=ft$Value,
-#                 lower = (ft$Value-1.96*ft$StdDev),
-#                 upper = (ft$Value+1.96*ft$StdDev))%>% 
-#   mutate(indicador='Ft')
-# 
-# p1<- ggplot(data=rt)+
-#   geom_line(aes(x=x,y=y))+
-#   geom_ribbon(aes(ymin=lower,ymax=upper,x=x),alpha=0.2)+
-#   labs(x = '', y = "Recluitment")  +
-#   scale_x_continuous(breaks = seq(from = 1960, to = 2060, by = 4)) +
-#   theme_bw(base_size=9) +
-#   ggtitle('')+
-#   theme(plot.title = element_text(hjust = 0.5),legend.position="top")
-# 
-# p2<- ggplot(data=Bt)+
-#   geom_line(aes(x=x,y=y))+
-#   #geom_ribbon(aes(ymin=lower,ymax=upper,x=x),alpha=0.2)+
-#   labs(x = '', y = "Total biomass 1+")  +
-#   scale_x_continuous(breaks = seq(from = 1960, to = 2060, by = 4)) +
-#   theme_bw(base_size=9) +
-#   ggtitle('')+
-#   theme(plot.title = element_text(hjust = 0.5),legend.position="top")
-# 
-# p3<- ggplot(data=bd)+
-#   geom_line(aes(x=x,y=y))+
-#   geom_ribbon(aes(ymin=lower,ymax=upper,x=x),alpha=0.2)+
-#   labs(x = '', y = "SSB")  +
-#   scale_x_continuous(breaks = seq(from = 1960, to = 2060, by = 4)) +
-#   theme_bw(base_size=9) +
-#   ggtitle('')+
-#   theme(plot.title = element_text(hjust = 0.5),legend.position="top")
-# 
-# p4<- ggplot(data=Ft)+
-#   geom_line(aes(x=x,y=y))+
-#   geom_ribbon(aes(ymin=lower,ymax=upper,x=x),alpha=0.2)+
-#   labs(x = '', y = "F")  +
-#   scale_x_continuous(breaks = seq(from = 1960, to = 2060, by = 4)) +
-#   theme_bw(base_size=9) +
-#   ggtitle('')+
-#   theme(plot.title = element_text(hjust = 0.5),legend.position="top")
-# 
-# p5<- ggplot(data=Ct)+
-#   geom_line(aes(x=x,y=y))+
-#   #geom_ribbon(aes(ymin=lower,ymax=upper,x=x),alpha=0.2)+
-#   labs(x = '', y = "Catch")  +
-#   scale_x_continuous(breaks = seq(from = 1960, to = 2060, by = 4)) +
-#   theme_bw(base_size=9) +
-#   ggtitle('')+
-#   theme(plot.title = element_text(hjust = 0.5),legend.position="top")
-# 
-# fig<-ggarrange(p2,p1,p4,ncol=1,nrow=3,common.legend=TRUE,legend='right') 
-# ggsave("report/run/SeriesTiempo.png", fig,  width=7, height=6)
 
 setwd(wd)
